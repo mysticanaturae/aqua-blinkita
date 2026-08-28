@@ -1,0 +1,1331 @@
+﻿<!doctype html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Caribbean Ocean Portalâ„˘ â€” AQUA Â· BLINKITA</title>
+
+<meta
+name="description"
+content="A private Caribbean Ocean Portal experience from the Caribbean shore."
+
+>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@400;500;600&display=swap"
+  rel="stylesheet"
+>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="noise"></div>
+
+<!-- =========================================================
+     4-SCREEN PORTAL THRESHOLD
+========================================================= -->
+
+<div
+  id="threshold"
+  class="threshold"
+  aria-hidden="false"
+>
+
+  <div class="threshold-water"></div>
+
+  <div class="threshold-top">
+
+
+<span data-i18n="thresholdTop">
+  AQUA Â· BLINKITA
+</span>
+
+
+  </div>
+
+  <!-- LANGUAGE TOGGLE -->
+
+<button
+id="thresholdLangToggle"
+class="threshold-lang-toggle"
+type="button"
+aria-label="Switch language"
+
+>
+
+
+SI
+
+
+  </button>
+
+  <!-- PROGRESS -->
+
+  <div class="threshold-progress">
+    <i></i>
+  </div>
+
+  <!-- THRESHOLD STAGE -->
+
+  <main class="threshold-stage">
+
+
+<!-- SCREEN 1 -->
+
+<section
+  class="threshold-slide active"
+  data-slide="0"
+>
+
+  <p
+    class="threshold-kicker"
+    data-i18n="threshold1Kicker"
+  >
+    SOMEWHERE IN THE CARIBBEAN
+  </p>
+
+  <h1 data-i18n="threshold1Title">
+    THE OCEAN<br>
+    <em>IS WAITING.</em>
+  </h1>
+
+  <p data-i18n="threshold1Text">
+    Not for a traveler.<br>
+    For a name.
+  </p>
+
+  <button
+    class="threshold-next"
+    type="button"
+  >
+    <span data-i18n="threshold1Button">
+      BEGIN THE JOURNEY
+    </span>
+
+    <span aria-hidden="true">â†’</span>
+  </button>
+
+</section>
+
+
+<!-- SCREEN 2 -->
+
+<section
+  class="threshold-slide"
+  data-slide="1"
+>
+
+  <p
+    class="threshold-kicker"
+    data-i18n="threshold2Kicker"
+  >
+    THE FIRST KEY
+  </p>
+
+  <h1 data-i18n="threshold2Title">
+    YOUR<br>
+    <em>NAME.</em>
+  </h1>
+
+  <p data-i18n="threshold2Text">
+    Something as simple as a name<br>
+    can become a message carried to water.
+  </p>
+
+  <label class="threshold-name">
+
+    <span data-i18n="thresholdNameLabel">
+      YOUR NAME
+    </span>
+
+    <input
+      id="thresholdName"
+      type="text"
+      autocomplete="name"
+      placeholder="Enter your name"
+      data-i18n-placeholder="thresholdNamePlaceholder"
+    >
+
+  </label>
+
+  <button
+    class="threshold-next"
+    type="button"
+  >
+
+    <span data-i18n="threshold2Button">
+      CARRY IT TO THE SEA
+    </span>
+
+    <span aria-hidden="true">â†’</span>
+
+  </button>
+
+</section>
+
+
+<!-- SCREEN 3 -->
+
+<section
+  class="threshold-slide"
+  data-slide="2"
+>
+
+  <p
+    class="threshold-kicker"
+    data-i18n="threshold3Kicker"
+  >
+    THE SECOND KEY
+  </p>
+
+  <h1 data-i18n="threshold3Title">
+    A SHELL.<br>
+    <em>A BREATH.</em>
+  </h1>
+
+  <p data-i18n="threshold3Text">
+    I whisper your name through the spiral,<br>
+    then let the Caribbean receive it.
+  </p>
+
+  <div
+    class="threshold-shell"
+    aria-hidden="true"
+  >
+    â—Ż
+  </div>
+
+  <button
+    class="threshold-next"
+    type="button"
+  >
+
+    <span data-i18n="threshold3Button">
+      OPEN THE WATER
+    </span>
+
+    <span aria-hidden="true">â†’</span>
+
+  </button>
+
+</section>
+
+
+<!-- SCREEN 4 -->
+
+<section
+  class="threshold-slide"
+  data-slide="3"
+>
+
+  <p
+    class="threshold-kicker"
+    data-i18n="threshold4Kicker"
+  >
+    THE THRESHOLD
+  </p>
+
+  <h1 data-i18n="threshold4Title">
+    WHAT HAPPENS<br>
+    WHEN A NAME<br>
+    <em>ENTERS THE OCEAN?</em>
+  </h1>
+
+  <p data-i18n="threshold4Text">
+    The ritual begins in the Caribbean.<br>
+    The water has no borders.
+  </p>
+
+  <button
+    id="enterPortal"
+    class="threshold-enter"
+    type="button"
+  >
+
+    <span data-i18n="threshold4Button">
+      ENTER THE CARIBBEAN OCEAN PORTALâ„˘
+    </span>
+
+  </button>
+
+</section>
+
+
+  </main>
+
+  <!-- BACK -->
+
+<button
+id="thresholdBack"
+class="threshold-back"
+type="button"
+
+>
+
+
+<span data-i18n="thresholdBack">
+  â† BACK
+</span>
+
+
+  </button>
+
+  <!-- SKIP INTRO -->
+
+  <div
+    class="threshold-skip"
+    style="
+      position:absolute;
+      left:0;
+      right:0;
+      bottom:24px;
+      z-index:9999;
+      pointer-events:auto;
+      text-align:center;
+    "
+  >
+
+
+<button
+  id="skipThreshold"
+  type="button"
+  data-action="skip-intro"
+  style="
+    position:relative;
+    z-index:10000;
+    pointer-events:auto;
+    cursor:pointer;
+  "
+>
+
+  <span data-i18n="thresholdSkip">
+    SKIP INTRO
+  </span>
+
+</button>
+
+
+  </div>
+
+</div>
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<header class="hero" id="home">
+
+  <div class="hero-image">
+
+
+<img
+  src="public/images/0-final-atmospheric1.jpg"
+  alt="Caribbean ocean shoreline"
+>
+
+
+  </div>
+
+  <nav>
+
+
+<div class="brand">
+  AQUA <span>Â·</span> BLINKITA
+</div>
+
+<div class="nav-actions">
+
+  <a
+    href="#intention"
+    data-i18n="navChoose"
+  >
+    CHOOSE YOUR INTENTION
+  </a>
+
+  <button
+    id="langToggle"
+    class="lang-toggle"
+    type="button"
+    aria-label="Switch language"
+  >
+    SI
+  </button>
+
+</div>
+
+
+  </nav>
+
+  <div class="hero-inner">
+
+
+<p
+  class="eyebrow"
+  data-i18n="heroEyebrow"
+>
+  A PRIVATE CARIBBEAN EXPERIENCE Â· SEPTEMBER 2026
+</p>
+
+<p
+  class="micro-intro"
+  data-i18n="heroMicro"
+>
+  YOUR NAME. &nbsp; YOUR INTENTION. &nbsp; THE CARIBBEAN SEA.
+</p>
+
+<h1 data-i18n="heroTitle">
+  SOMEWHERE IN THE CARIBBEAN,
+  <br>
+  <em>THE OCEAN IS WAITING FOR YOUR NAME.</em>
+</h1>
+
+<p
+  class="hero-sub"
+  data-i18n="heroSub"
+>
+  You don't have to travel to the Caribbean.
+  <br>
+  <strong>Your name can.</strong>
+</p>
+
+<a
+  class="button"
+  href="#intention"
+  data-i18n="heroButton"
+>
+  BEGIN YOUR OCEAN PORTAL
+</a>
+
+
+  </div>
+
+  <div class="wave">âŚ</div>
+
+</header>
+
+<!-- =========================================================
+     CHOOSE INTENTION
+========================================================= -->
+
+<div class="section-image full-image">
+
+<img
+src="public/images/1-caribbeanshorline.jpg"
+alt="Caribbean shoreline"
+
+>
+
+</div>
+
+<section
+  id="intention"
+  class="choice section-dark"
+>
+
+  <div class="section-narrow">
+
+
+<p
+  class="eyebrow"
+  data-i18n="intentionEyebrow"
+>
+  CHOOSE YOUR INTENTION
+</p>
+
+<h2 data-i18n="intentionTitle">
+  What are you ready to bring to the water?
+</h2>
+
+<p
+  class="lead"
+  data-i18n="intentionLead"
+>
+  Choose what you want to place into the ocean moment.
+</p>
+
+<div
+  class="intent-grid"
+  id="intentGrid"
+></div>
+
+<div
+  id="intentionConfirmation"
+  class="intention-confirmation"
+  hidden
+></div>
+
+
+  </div>
+
+</section>
+
+<!-- =========================================================
+     OCEAN PORTAL DAYS
+========================================================= -->
+
+<div class="section-image full-image">
+
+<img
+src="public/images/2-caribbeanshorline.jpg"
+alt="Caribbean shoreline"
+
+>
+
+</div>
+
+<section
+  id="portals"
+  class="portals section-narrow"
+>
+
+  <p
+    class="eyebrow"
+    data-i18n="portalEyebrow"
+  >
+    SEPTEMBER 2026
+  </p>
+
+  <h2 data-i18n="portalTitle">
+    13 OCEAN PORTALS.
+  </h2>
+
+  <p
+    class="lead"
+    data-i18n="portalLead"
+  >
+    Each day carries a different Tzolk'in energy.
+    Choose the day that calls you.
+  </p>
+
+  <div class="capacity-note">
+
+
+<strong data-i18n="capacityStrong">
+  Only 2 private places
+</strong>
+
+<span data-i18n="capacityText">
+  are available for each Ocean Portal Day.
+</span>
+
+
+  </div>
+
+  <div
+    id="portalGrid"
+    class="portal-grid"
+  ></div>
+
+</section>
+
+<!-- =========================================================
+     HOW IT WORKS
+========================================================= -->
+
+<section class="experience section-dark">
+
+  <div class="section-narrow">
+
+
+<p
+  class="eyebrow"
+  data-i18n="howEyebrow"
+>
+  HOW THE PORTAL WORKS
+</p>
+
+<h2 data-i18n="howTitle">
+  You stay where you are.
+  I go to the Caribbean.
+</h2>
+
+<p
+  class="lead"
+  data-i18n="howLead"
+>
+  Your name, intention and question become part of a
+  private moment beside the Caribbean Sea.
+</p>
+
+<div class="steps">
+
+  <div>
+    <span>01</span>
+
+    <h3 data-i18n="step1Title">
+      YOU CHOOSE
+    </h3>
+
+    <p data-i18n="step1Text">
+      Your intention and the Ocean Portal Day that calls you.
+    </p>
+  </div>
+
+
+  <div>
+    <span>02</span>
+
+    <h3 data-i18n="step2Title">
+      I CARRY
+    </h3>
+
+    <p data-i18n="step2Text">
+      Your name, intention and question to the Caribbean shore.
+    </p>
+  </div>
+
+
+  <div>
+    <span>03</span>
+
+    <h3 data-i18n="step3Title">
+      THE PORTAL OPENS
+    </h3>
+
+    <p data-i18n="step3Text">
+      The shore ritual, Shell Messenger and Aqua Lemu Reiki
+      become part of the moment.
+    </p>
+  </div>
+
+
+  <div>
+    <span>04</span>
+
+    <h3 data-i18n="step4Title">
+      THE MESSAGE RETURNS
+    </h3>
+
+    <p data-i18n="step4Text">
+      I record your personal Ocean Message from the Caribbean shore.
+    </p>
+  </div>
+
+</div>
+
+
+  </div>
+
+</section>
+
+<!-- CINEMATIC TRANSITION -->
+
+<div class="section-image cinematic-image">
+
+<img
+src="public/images/5-caribbean-shoreline.jpg"
+alt="Caribbean shoreline"
+
+>
+
+</div>
+
+<!-- =========================================================
+     SHELL
+========================================================= -->
+
+<section class="shell section-narrow">
+
+  <div class="shell-gallery">
+
+
+<img
+  src="public/images/3-shell-messenger.jpg"
+  alt="Shell Messenger by the Caribbean sea"
+>
+
+<img
+  src="public/images/4-hand-shell-water.jpg"
+  alt="Shell held beside Caribbean water"
+>
+
+
+  </div>
+
+  <div>
+
+
+<p
+  class="eyebrow"
+  data-i18n="shellEyebrow"
+>
+  THE SHELL MESSENGER
+</p>
+
+<h2 data-i18n="shellTitle">
+  Your name enters the water through the shell.
+</h2>
+
+<p
+  class="lead"
+  data-i18n="shellLead"
+>
+  I whisper your name through its spiral,
+  and let the ocean receive it.
+</p>
+
+<a
+  href="water.html"
+  class="story-link"
+  data-i18n="readWater"
+>
+  READ THE STORY OF SPEAKING TO WATER â†’
+</a>
+
+
+  </div>
+
+</section>
+
+<!-- WATER CLOSE-UP -->
+
+<div class="section-image cinematic-image">
+
+<img
+src="public/images/6-water-close-up.jpg"
+alt="Caribbean water close-up"
+
+>
+
+</div>
+
+<!-- =========================================================
+     AQUA LEMU
+========================================================= -->
+
+<div class="section-image full-image">
+
+<img
+src="public/images/7-aqua-lemu.jpg"
+alt="Aqua Lemu by the Caribbean sea"
+
+>
+
+</div>
+
+<section class="aqua-lemu section-dark">
+
+  <div class="section-narrow aqua-layout">
+
+
+<div>
+
+  <p
+    class="eyebrow"
+    data-i18n="aquaEyebrow"
+  >
+    THE AQUA LEMU CURRENT
+  </p>
+
+  <h2 data-i18n="aquaTitle">
+    The water carries more than your name.
+  </h2>
+
+</div>
+
+<div class="prose">
+
+  <p data-i18n="aquaText1">
+    Alongside the shore ritual, Aqua Lemu Reiki is offered
+    as remote energetic support for your chosen intention.
+  </p>
+
+  <p data-i18n="aquaText2">
+    You do not have to be online. You do not have to be
+    available at the exact moment. You can simply receive.
+  </p>
+
+  <p data-i18n="aquaText3">
+    If you wish to consciously participate, you can create
+    your own quiet moment later, whenever your day allows.
+  </p>
+
+  <a
+    href="aqua-lemu.html"
+    class="story-link light"
+    data-i18n="readAqua"
+  >
+    ENTER THE AQUA LEMU STORY â†’
+  </a>
+
+</div>
+
+
+  </div>
+
+</section>
+
+<!-- =========================================================
+     MESSAGE
+========================================================= -->
+
+<section class="message section-narrow">
+
+  <p
+    class="eyebrow"
+    data-i18n="messageEyebrow"
+  >
+    THE OCEAN MESSAGE
+  </p>
+
+  <h2 data-i18n="messageTitle">
+    Not from a script.
+    <br>
+    Not from a template.
+  </h2>
+
+  <p
+    class="lead"
+    data-i18n="messageLead"
+  >
+    From that moment.
+  </p>
+
+  <p
+    class="message-text"
+    data-i18n="messageText"
+  >
+    After the ritual, I stay by the sea. Before I leave the shore,
+    I record your personal Ocean Message â€” speaking it to you
+    from the Caribbean shore.
+  </p>
+
+  <div class="message-image">
+
+
+<img
+  src="public/images/8-ocean-message.jpg"
+  alt="Caribbean ocean message"
+>
+
+
+  </div>
+
+  <div class="audio-placeholder">
+
+
+â—‰ &nbsp;
+
+<span data-i18n="audioLabel">
+  YOUR PERSONAL OCEAN MESSAGE
+</span>
+
+
+  </div>
+
+</section>
+
+<!-- =========================================================
+     OFFERS
+========================================================= -->
+
+<div class="section-image full-image">
+
+<img
+src="public/images/9-september-season.jpg"
+alt="September Caribbean ocean season"
+
+>
+
+</div>
+
+<section class="offers section-narrow">
+
+  <p
+    class="eyebrow"
+    data-i18n="offersEyebrow"
+  >
+    TWO WAYS TO ENTER
+  </p>
+
+  <h2 data-i18n="offersTitle">
+    Choose your doorway.
+  </h2>
+
+  <div class="offer-grid">
+
+
+<!-- WHISPER -->
+
+<article class="offer whisper">
+
+  <p
+    class="eyebrow"
+    data-i18n="whisperEyebrow"
+  >
+    THE OCEAN WHISPERâ„˘
+  </p>
+
+  <h3>â‚¬55</h3>
+
+  <p
+    class="tag"
+    data-i18n="whisperTag"
+  >
+    A small message from the sea.
+  </p>
+
+  <ul>
+
+    <li data-i18n="whisper1">
+      Your name + birth date
+    </li>
+
+    <li data-i18n="whisper2">
+      One question / intention
+    </li>
+
+    <li data-i18n="whisper3">
+      Mini Aqua Lemu Reiki
+    </li>
+
+    <li data-i18n="whisper4">
+      Ocean Whisper audio
+    </li>
+
+    <li data-i18n="whisper5">
+      One photograph from the shore
+    </li>
+
+  </ul>
+
+  <p
+    class="muted"
+    data-i18n="whisperMuted"
+  >
+    A whisper from the shore.
+  </p>
+
+  <button
+    class="button secondary"
+    data-offer="whisper"
+    type="button"
+    data-i18n="whisperButton"
+  >
+    CHOOSE OCEAN WHISPER
+  </button>
+
+</article>
+
+
+<!-- PORTAL -->
+
+<article class="offer portal">
+
+  <p
+    class="eyebrow"
+    data-i18n="portalOfferEyebrow"
+  >
+    THE CARIBBEAN OCEAN PORTALâ„˘
+  </p>
+
+  <div
+    class="regular"
+    data-i18n="portalOfferRegular"
+  >
+    PRIVATE EXPERIENCE Â· â‚¬333
+  </div>
+
+  <h3>â‚¬99</h3>
+
+  <p
+    class="tag"
+    data-i18n="portalOfferTag"
+  >
+    September Ocean Season
+  </p>
+
+  <ul>
+
+    <li data-i18n="portal1">
+      Your name + birth date
+    </li>
+
+    <li data-i18n="portal2">
+      Your chosen intention
+    </li>
+
+    <li data-i18n="portal3">
+      Your chosen Tzolk'in Ocean Portal Day
+    </li>
+
+    <li data-i18n="portal4">
+      Private Ocean Portal ritual
+    </li>
+
+    <li data-i18n="portal5">
+      Shell Messenger
+    </li>
+
+    <li data-i18n="portal6">
+      Aqua Lemu Reiki ritual
+    </li>
+
+    <li data-i18n="portal7">
+      Personal Ocean Message recorded beside the sea
+    </li>
+
+    <li data-i18n="portal8">
+      Photograph from the shore
+    </li>
+
+  </ul>
+
+  <button
+    class="button"
+    data-offer="portal"
+    type="button"
+    data-i18n="portalButton"
+  >
+    ENTER THE OCEAN PORTAL
+  </button>
+
+</article>
+
+
+  </div>
+
+</section>
+
+<!-- =========================================================
+     FINAL
+========================================================= -->
+
+<section class="final section-dark">
+
+  <div class="section-narrow">
+
+
+<p
+  class="eyebrow"
+  data-i18n="finalEyebrow"
+>
+  THE OCEAN SEASON
+</p>
+
+<h2 data-i18n="finalTitle">
+  26 names.
+  <br>
+  13 Ocean Days.
+  <br>
+  One Caribbean Sea.
+</h2>
+
+<p
+  class="lead"
+  data-i18n="finalLead"
+>
+  You don't have to travel to the Caribbean.
+  Your name can.
+</p>
+
+<a
+  class="button"
+  href="#intention"
+  data-i18n="finalButton"
+>
+  ENTER YOUR OCEAN PORTAL
+</a>
+
+
+  </div>
+
+</section>
+
+<!-- =========================================================
+     BOOKING MODAL
+========================================================= -->
+
+<div
+  id="modal"
+  class="modal"
+  aria-hidden="true"
+>
+
+  <div class="modal-card">
+
+
+<button
+  class="close"
+  id="close"
+  type="button"
+  aria-label="Close"
+>
+  Ă—
+</button>
+
+<p
+  class="eyebrow"
+  data-i18n="entryEyebrow"
+>
+  YOUR OCEAN ENTRY
+</p>
+
+<h2 id="modalTitle">
+  Caribbean Ocean Portalâ„˘
+</h2>
+
+<p id="modalIntro"></p>
+
+<div
+  id="selectedPortal"
+  class="selected-portal"
+  hidden
+></div>
+
+<form id="bookingForm">
+
+  <label>
+
+    <span data-i18n="nameLabel">
+      Name
+    </span>
+
+    <input
+      name="name"
+      required
+    >
+
+  </label>
+
+
+  <label>
+
+    <span data-i18n="emailLabel">
+      Email
+    </span>
+
+    <input
+      type="email"
+      name="email"
+      required
+    >
+
+  </label>
+
+
+  <label>
+
+    <span data-i18n="birthLabel">
+      Birth date
+    </span>
+
+    <input
+      type="date"
+      name="birthDate"
+      required
+    >
+
+  </label>
+
+
+  <label>
+
+    <span data-i18n="intentionLabel">
+      Intention
+    </span>
+
+    <select
+      name="intention"
+      id="intentionSelect"
+      required
+    ></select>
+
+  </label>
+
+
+  <label id="dayWrap">
+
+    <span data-i18n="dayLabel">
+      Ocean Portal Day
+    </span>
+
+    <select
+      name="oceanDay"
+      id="daySelect"
+    ></select>
+
+  </label>
+
+
+  <label>
+
+    <span data-i18n="questionLabel">
+      Question / message
+    </span>
+
+    <textarea
+      name="question"
+      rows="4"
+    ></textarea>
+
+    <small
+      class="question-hint"
+      data-i18n="questionHint"
+    >
+      The more open and precise your question,
+      the more space it creates for reflection and listening.
+    </small>
+
+  </label>
+
+
+  <div class="payment-choice">
+
+    <button
+      class="button"
+      type="submit"
+      data-i18n="paypalButton"
+    >
+      CONTINUE TO PAYPAL
+    </button>
+
+    <button
+      class="button secondary"
+      type="button"
+      id="bankButton"
+      data-i18n="bankButton"
+    >
+      RESERVE BY BANK TRANSFER
+    </button>
+
+  </div>
+
+
+  <div
+    id="bankDetails"
+    class="bank-details"
+    hidden
+  ></div>
+
+
+  <p
+    class="form-note"
+    data-i18n="holdNote"
+  >
+    Your place is counted only when you confirm your reservation
+    by clicking a payment or reservation button.
+  </p>
+
+</form>
+
+
+  </div>
+
+</div>
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+AQUA Â· BLINKITA Â· CARIBBEAN OCEAN PORTALâ„˘
+
+  <br>
+
+<span>Â© 2026</span>
+
+</footer>
+
+<!-- =========================================================
+     SCRIPTS
+========================================================= -->
+
+<script src="data/ocean-days.js"></script>
+
+<script src="app.js"></script>
+
+<!-- =========================================================
+     THRESHOLD SAFETY HANDLER
+========================================================= -->
+
+<script>
+
+(function(){
+
+  function ready(){
+
+    const threshold =
+      document.getElementById('threshold');
+
+    const skip =
+      document.getElementById('skipThreshold');
+
+    const language =
+      document.getElementById('thresholdLangToggle');
+
+
+    if(skip && threshold){
+
+      skip.onclick = function(){
+
+        threshold.classList.add('leaving');
+
+        threshold.setAttribute(
+          'aria-hidden',
+          'true'
+        );
+
+        document.body.classList.remove(
+          'portal-lock'
+        );
+
+        setTimeout(function(){
+
+          threshold.style.display =
+            'none';
+
+        }, 850);
+
+      };
+
+    }
+
+
+    if(language){
+
+      language.setAttribute(
+        'aria-label',
+        'Switch between English and Slovenian'
+      );
+
+    }
+
+  }
+
+
+  if(
+    document.readyState === 'loading'
+  ){
+
+    document.addEventListener(
+      'DOMContentLoaded',
+      ready,
+      {
+        once:true
+      }
+    );
+
+  }else{
+
+    ready();
+
+  }
+
+})();
+
+</script>
+
+</body>
+</html>
+
+
+

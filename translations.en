@@ -1,0 +1,45 @@
+/* =========================================================
+   THRESHOLD INTRO
+========================================================= */
+
+threshold1Eyebrow:
+  'BEFORE YOU ENTER',
+
+threshold1Title:
+  'Somewhere in the Caribbean,<br><em>the ocean is waiting.</em>',
+
+threshold1Text:
+  'This is not a website you simply visit.<br>It is a small journey toward the sea.',
+
+threshold2Eyebrow:
+  'YOUR NAME',
+
+threshold2Title:
+  'Before the water receives anything,<br><em>it receives your name.</em>',
+
+threshold2Text:
+  'Whisper it. Speak it. Or simply hold it in your mind.',
+
+thresholdNamePlaceholder:
+  'Your name',
+
+threshold3Eyebrow:
+  'THE PORTAL',
+
+threshold3Title:
+  'Your intention.<br>Your moment.<br><em>The Caribbean Sea.</em>',
+
+threshold3Text:
+  'When you are ready, step through the threshold.',
+
+thresholdBack:
+  '← BACK',
+
+thresholdNext:
+  'CONTINUE →',
+
+thresholdEnter:
+  'BEGIN THE JOURNEY',
+
+thresholdSkip:
+  'SKIP INTRO'
