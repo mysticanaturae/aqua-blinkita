@@ -1245,89 +1245,9 @@ AQUA · BLINKITA · CARIBBEAN OCEAN PORTAL™
 
 <script src="app.js"></script>
 
-<!-- =========================================================
-     THRESHOLD SAFETY HANDLER
-========================================================= -->
-
-<script>
-
-(function(){
-
-  function ready(){
-
-    const threshold =
-      document.getElementById('threshold');
-
-    const skip =
-      document.getElementById('skipThreshold');
-
-    const language =
-      document.getElementById('thresholdLangToggle');
-
-
-    if(skip && threshold){
-
-      skip.onclick = function(){
-
-        threshold.classList.add('leaving');
-
-        threshold.setAttribute(
-          'aria-hidden',
-          'true'
-        );
-
-        document.body.classList.remove(
-          'portal-lock'
-        );
-
-        setTimeout(function(){
-
-          threshold.style.display =
-            'none';
-
-        }, 850);
-
-      };
-
-    }
-
-
-    if(language){
-
-      language.setAttribute(
-        'aria-label',
-        'Switch between English and Slovenian'
-      );
-
-    }
-
-  }
-
-
-  if(
-    document.readyState === 'loading'
-  ){
-
-    document.addEventListener(
-      'DOMContentLoaded',
-      ready,
-      {
-        once:true
-      }
-    );
-
-  }else{
-
-    ready();
-
-  }
-
-})();
-
-</script>
-
 </body>
 </html>
+
 
 
 
