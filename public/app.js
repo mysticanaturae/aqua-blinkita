@@ -1006,7 +1006,7 @@ const translations = {
       'CHOOSE YOUR INTENTION',
 
     heroEyebrow:
-      'A PRIVATE CARIBBEAN EXPERIENCE · SEPTEMBER 2026',
+      'A PRIVATE CARIBBEAN EXPERIENCE · NOVEMBER 2026',
 
     heroMicro:
       'YOUR NAME. &nbsp; YOUR INTENTION. &nbsp; THE CARIBBEAN SEA.',
@@ -1030,7 +1030,7 @@ const translations = {
       'Choose what you want to place into the ocean moment.',
 
     portalEyebrow:
-      'SEPTEMBER 2026',
+      'NOVEMBER 2026',
 
     portalTitle:
       '13 OCEAN PORTALS.',
@@ -1162,7 +1162,7 @@ const translations = {
       'PRIVATE EXPERIENCE · €333',
 
     portalOfferTag:
-      'September Ocean Season',
+      'November Ocean Season',
 
     portal1:
       'Your name + birth date',
@@ -1308,7 +1308,7 @@ const translations = {
       'IZBERI SVOJO NAMERO',
 
     heroEyebrow:
-      'ZASEBNA KARIBSKA IZKUŠNJA · SEPTEMBER 2026',
+      'ZASEBNA KARIBSKA IZKUŠNJA · NOVEMBER 2026',
 
     heroMicro:
       'TVOJE IME. &nbsp; TVOJA NAMERA. &nbsp; KARIBSKO MORJE.',
@@ -1332,7 +1332,7 @@ const translations = {
       'Izberi, kaj želiš položiti v oceanski trenutek.',
 
     portalEyebrow:
-      'SEPTEMBER 2026',
+      'NOVEMBER 2026',
 
     portalTitle:
       '13 OCEANSKIH PORTALOV.',

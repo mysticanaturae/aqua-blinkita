@@ -1,29 +1,10 @@
 const OCEAN_DAYS = [
-
   {
-    date:'2026-08-31',
-    label:'31 AUG',
-    label_sl:'31 AVG',
-    tone:13,
-    kin:'13 Imix',
-
-    name:'THE ORIGIN PORTAL',
-    name_sl:'PORTAL IZVORA',
-
-    desc:
-      'Primal waters, beginning, nourishment and returning to the source.',
-
-    desc_sl:
-      'Prvinske vode, začetek, hranjenje in vračanje k izvoru.'
-  },
-
-
-  {
-    date:'2026-09-04',
-    label:'04 SEP',
-    label_sl:'04 SEP',
-    tone:4,
-    kin:'4 Chicchan',
+    date:'2026-11-03',
+    label:'03 NOV',
+    label_sl:'03 NOV',
+    tone:12,
+    kin:'12 Chicchan',
 
     name:'THE LIFE FORCE PORTAL',
     name_sl:'PORTAL ŽIVLJENJSKE SILE',
@@ -34,32 +15,172 @@ const OCEAN_DAYS = [
     desc_sl:
       'Življenjska sila, vitalnost, utelešenje in prebujanje energije.'
   },
-
-
   {
-    date:'2026-09-05',
-    label:'05 SEP',
-    label_sl:'05 SEP',
-    tone:5,
-    kin:'5 Cimi',
+    date:'2026-11-05',
+    label:'05 NOV',
+    label_sl:'05 NOV',
+    tone:1,
+    kin:'1 Manik',
 
-    name:'THE RELEASE PORTAL',
-    name_sl:'PORTAL SPUŠČANJA',
+    name:'THE HEALING HANDS PORTAL',
+    name_sl:'PORTAL ZDRAVILNIH ROK',
 
     desc:
-      'Letting go, transition, transformation and making space for what comes next.',
+      'Healing, care, reciprocity and the wisdom carried through the hands.',
 
     desc_sl:
-      'Spuščanje, prehod, preobrazba in ustvarjanje prostora za tisto, kar prihaja.'
+      'Zdravljenje, skrb, vzajemnost in modrost, ki jo prenašajo roke.'
   },
-
-
   {
-    date:'2026-09-07',
-    label:'07 SEP',
-    label_sl:'07 SEP',
+    date:'2026-11-07',
+    label:'07 NOV',
+    label_sl:'07 NOV',
+    tone:3,
+    kin:'3 Muluc',
+
+    name:'THE WATER OFFERING PORTAL',
+    name_sl:'PORTAL VODNEGA DARU',
+
+    desc:
+      'Water, emotion, gratitude and the offering of what is ready to flow.',
+
+    desc_sl:
+      'Voda, čustva, hvaležnost in darovanje tistega, kar je pripravljeno steči.'
+  },
+  {
+    date:'2026-11-09',
+    label:'09 NOV',
+    label_sl:'09 NOV',
+    tone:5,
+    kin:'5 Chuen',
+
+    name:'THE CREATIVE THREAD PORTAL',
+    name_sl:'PORTAL USTVARJALNE NITI',
+
+    desc:
+      'Creativity, play, artistry and weaving a new pattern into life.',
+
+    desc_sl:
+      'Ustvarjalnost, igra, umetnost in tkanje novega vzorca v življenje.'
+  },
+  {
+    date:'2026-11-11',
+    label:'11 NOV',
+    label_sl:'11 NOV',
     tone:7,
-    kin:'7 Lamat',
+    kin:'7 Ben',
+
+    name:'THE GROWTH PORTAL',
+    name_sl:'PORTAL RASTI',
+
+    desc:
+      'The rising path, inner alignment, growth and the strength to stand tall.',
+
+    desc_sl:
+      'Pot vzpenjanja, notranja poravnanost, rast in moč, da stojimo pokončno.'
+  },
+  {
+    date:'2026-11-13',
+    label:'13 NOV',
+    label_sl:'13 NOV',
+    tone:9,
+    kin:'9 Men',
+
+    name:'THE VISION PORTAL',
+    name_sl:'PORTAL VIZIJE',
+
+    desc:
+      'Vision, perspective, freedom and seeing the wider horizon.',
+
+    desc_sl:
+      'Vizija, perspektiva, svoboda in pogled proti širšemu obzorju.'
+  },
+  {
+    date:'2026-11-15',
+    label:'15 NOV',
+    label_sl:'15 NOV',
+    tone:11,
+    kin:'11 Caban',
+
+    name:'THE EARTH MOVEMENT PORTAL',
+    name_sl:'PORTAL GIBANJA ZEMLJE',
+
+    desc:
+      'Earth, movement, evolution and the intelligence of change.',
+
+    desc_sl:
+      'Zemlja, gibanje, evolucija in inteligenca spremembe.'
+  },
+  {
+    date:'2026-11-17',
+    label:'17 NOV',
+    label_sl:'17 NOV',
+    tone:13,
+    kin:'13 Cauac',
+
+    name:'THE RENEWAL STORM PORTAL',
+    name_sl:'PORTAL NEVIHTNE OBNOVE',
+
+    desc:
+      'Storm, cleansing, release and renewal after the breakthrough.',
+
+    desc_sl:
+      'Nevihta, očiščenje, spuščanje in obnova po preboju.'
+  },
+  {
+    date:'2026-11-19',
+    label:'19 NOV',
+    label_sl:'19 NOV',
+    tone:2,
+    kin:'2 Imix',
+
+    name:'THE ORIGIN PORTAL',
+    name_sl:'PORTAL IZVORA',
+
+    desc:
+      'Primal waters, beginnings, nourishment and returning to the source.',
+
+    desc_sl:
+      'Prvinske vode, začetki, hranjenje in vračanje k izvoru.'
+  },
+  {
+    date:'2026-11-21',
+    label:'21 NOV',
+    label_sl:'21 NOV',
+    tone:4,
+    kin:'4 Akbal',
+
+    name:'THE INNER DAWN PORTAL',
+    name_sl:'PORTAL NOTRANJE ZORE',
+
+    desc:
+      'Dreaming, the inner world, stillness and the light that appears within.',
+
+    desc_sl:
+      'Sanje, notranji svet, tišina in svetloba, ki se prižge v nas.'
+  },
+  {
+    date:'2026-11-23',
+    label:'23 NOV',
+    label_sl:'23 NOV',
+    tone:6,
+    kin:'6 Chicchan',
+
+    name:'THE AWAKENING PORTAL',
+    name_sl:'PORTAL PREBUJENJA',
+
+    desc:
+      'Life force, instinct, vitality and energy moving through the body.',
+
+    desc_sl:
+      'Življenjska sila, instinkt, vitalnost in energija, ki se pretaka skozi telo.'
+  },
+  {
+    date:'2026-11-26',
+    label:'26 NOV',
+    label_sl:'26 NOV',
+    tone:9,
+    kin:'9 Lamat',
 
     name:'THE LOVE & ABUNDANCE PORTAL',
     name_sl:'PORTAL LJUBEZNI IN OBILJA',
@@ -70,167 +191,20 @@ const OCEAN_DAYS = [
     desc_sl:
       'Lepota, privlačnost, ljubezen, Venera in odpiranje obilja.'
   },
-
-
   {
-    date:'2026-09-08',
-    label:'08 SEP',
-    label_sl:'08 SEP',
-    tone:8,
-    kin:'8 Muluc',
+    date:'2026-11-29',
+    label:'29 NOV',
+    label_sl:'29 NOV',
+    tone:12,
+    kin:'12 Chuen',
 
-    name:'THE WATER PORTAL',
-    name_sl:'VODNI PORTAL',
+    name:'THE CREATIVE TRANSFORMATION PORTAL',
+    name_sl:'PORTAL USTVARJALNE PREOBRAZBE',
 
     desc:
-      'Water, cleansing, emotion, offering and returning to the flow.',
+      'Creative transformation, play, imagination and bringing a new story to life.',
 
     desc_sl:
-      'Voda, očiščenje, čustva, darovanje in vračanje v tok.'
-  },
-
-
-  {
-    date:'2026-09-13',
-    label:'13 SEP',
-    label_sl:'13 SEP',
-    tone:13,
-    kin:'13 Ix',
-
-    name:'THE MYSTERY PORTAL',
-    name_sl:'PORTAL SKRIVNOSTI',
-
-    desc:
-      'Jaguar, mystery, inner power and the intelligence of the unseen.',
-
-    desc_sl:
-      'Jaguar, skrivnost, notranja moč in inteligenca nevidnega.'
-  },
-
-
-  {
-    date:'2026-09-14',
-    label:'14 SEP',
-    label_sl:'14 SEP',
-    tone:1,
-    kin:'1 Men',
-
-    name:'THE VISION PORTAL',
-    name_sl:'PORTAL VIZIJE',
-
-    desc:
-      'A wider view, vision, future possibilities and seeing from above.',
-
-    desc_sl:
-      'Širši pogled, vizija, prihodnje možnosti in pogled od zgoraj.'
-  },
-
-
-  {
-    date:'2026-09-16',
-    label:'16 SEP',
-    label_sl:'16 SEP',
-    tone:3,
-    kin:'3 Caban',
-
-    name:'THE GROUNDING PORTAL',
-    name_sl:'PORTAL UTELEŠENOSTI',
-
-    desc:
-      'Earth, movement, change and returning to what is real beneath you.',
-
-    desc_sl:
-      'Zemlja, gibanje, sprememba in vračanje k temu, kar je resnično pod tabo.'
-  },
-
-
-  {
-    date:'2026-09-18',
-    label:'18 SEP',
-    label_sl:'18 SEP',
-    tone:5,
-    kin:'5 Cauac',
-
-    name:'THE STORM PORTAL',
-    name_sl:'PORTAL NEVIHTE',
-
-    desc:
-      'Rain, breakthrough, clearing and the release of what has become stagnant.',
-
-    desc_sl:
-      'Dež, preboj, čiščenje in sproščanje tistega, kar je zastalo.'
-  },
-
-
-  {
-    date:'2026-09-19',
-    label:'19 SEP',
-    label_sl:'19 SEP',
-    tone:6,
-    kin:'6 Ahau',
-
-    name:'THE LIGHT PORTAL',
-    name_sl:'PORTAL SVETLOBE',
-
-    desc:
-      'Sun, clarity, radiance and the return of life-giving light.',
-
-    desc_sl:
-      'Sonce, jasnost, sijaj in vrnitev svetlobe, ki daje življenje.'
-  },
-
-
-  {
-    date:'2026-09-20',
-    label:'20 SEP',
-    label_sl:'20 SEP',
-    tone:7,
-    kin:'7 Imix',
-
-    name:'THE REBIRTH PORTAL',
-    name_sl:'PORTAL PREPORODA',
-
-    desc:
-      'Primal water, renewal, nourishment and the beginning of another cycle.',
-
-    desc_sl:
-      'Prvinska voda, obnova, hranjenje in začetek novega cikla.'
-  },
-
-
-  {
-    date:'2026-09-24',
-    label:'24 SEP',
-    label_sl:'24 SEP',
-    tone:11,
-    kin:'11 Chicchan',
-
-    name:'THE AWAKENING PORTAL',
-    name_sl:'PORTAL PREBUJENJA',
-
-    desc:
-      'Life force, vitality, awakening and the return of energy to the body.',
-
-    desc_sl:
-      'Življenjska sila, vitalnost, prebujenje in vračanje energije v telo.'
-  },
-
-
-  {
-    date:'2026-09-28',
-    label:'28 SEP',
-    label_sl:'28 SEP',
-    tone:2,
-    kin:'2 Muluc',
-
-    name:'THE RETURN TO WATER PORTAL',
-    name_sl:'PORTAL VRAČANJA K VODI',
-
-    desc:
-      'Water, relationship, offering and returning gently to the source.',
-
-    desc_sl:
-      'Voda, odnos, darovanje in nežno vračanje k izvoru.'
+      'Ustvarjalna preobrazba, igra, domišljija in oživljanje nove zgodbe.'
   }
-
 ];
