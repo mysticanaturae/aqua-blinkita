@@ -335,146 +335,85 @@ function renderPortals(){
   }
 
   if(!hasOceanDays()){
-
-    console.warn(
-      'AQUA: OCEAN_DAYS is not available.'
-    );
-
+    console.warn('AQUA: OCEAN_DAYS is not available.');
     return;
-
   }
 
   grid.innerHTML = '';
 
-  OCEAN_DAYS.forEach(
-    (d,index) => {
+  const portalImageNames = [
+    'life-force',
+    'healing-hands',
+    'water-offering',
+    'creative-thread',
+    'growth',
+    'vision',
+    'earth-movement',
+    'renewal-storm',
+    'origin',
+    'inner-dawn',
+    'awakening',
+    'love-abundance',
+    'creative-transformation'
+  ];
 
-      const left =
-        remaining(d.date);
+  OCEAN_DAYS.forEach((d,index) => {
 
-      const full =
-        left <= 0;
+    const left = remaining(d.date);
+    const full = left <= 0;
 
-      const card =
-        document.createElement(
-          'article'
-        );
+    const card = document.createElement('article');
+    card.className = 'portal-card' + (full ? ' full' : '');
 
-      card.className =
-        'portal-card' +
-        (
-          full
-            ? ' full'
-            : ''
-        );
+    const label = lang === 'en' ? d.label : d.label_sl;
+    const name = lang === 'en' ? d.name : d.name_sl;
+    const desc = lang === 'en' ? d.desc : d.desc_sl;
 
-      const label =
-        lang === 'en'
-          ? d.label
-          : d.label_sl;
+    let availabilityText;
 
-      const name =
-        lang === 'en'
-          ? d.name
-          : d.name_sl;
+    if(left === 2){
+      availabilityText = lang === 'en' ? '2 PRIVATE PLACES' : '2 PROSTI MESTI';
+    } else if(left === 1){
+      availabilityText = lang === 'en' ? '1 PRIVATE PLACE LEFT' : 'ŠE 1 PROSTO MESTO';
+    } else {
+      availabilityText = lang === 'en' ? 'FULL · PORTAL CLOSED' : 'POLNO · PORTAL ZAPRT';
+    }
 
-      const desc =
-        lang === 'en'
-          ? d.desc
-          : d.desc_sl;
+    const imageName = portalImageNames[index];
+    const portalImage = imageName
+      ? `images/portal-${String(index + 1).padStart(2, '0')}-${imageName}.webp`
+      : '';
 
-      let availabilityText;
+    card.innerHTML = `
 
-      if(left === 2){
+      <div class="portal-card-image">
+        <img src="${portalImage}" alt="${name}" loading="lazy" decoding="async">
+      </div>
 
-        availabilityText =
-          lang === 'en'
-            ? '2 PRIVATE PLACES'
-            : '2 PROSTI MESTI';
+      <div class="portal-card-body">
+        <div class="date">${label} · ${d.tone}</div>
+        <div class="kin">${d.kin}</div>
+        <h3>${name}</h3>
+        <p>${desc}</p>
 
-      }
-
-      else if(left === 1){
-
-        availabilityText =
-          lang === 'en'
-            ? '1 PRIVATE PLACE LEFT'
-            : 'ŠE 1 PROSTO MESTO';
-
-      }
-
-      else{
-
-        availabilityText =
-          lang === 'en'
-            ? 'FULL · PORTAL CLOSED'
-            : 'POLNO · PORTAL ZAPRT';
-
-      }
-
-      card.innerHTML = `
-
-        <div class="date">
-          ${label} · ${d.tone}
-        </div>
-
-        <div class="kin">
-          ${d.kin}
-        </div>
-
-        <h3>
-          ${name}
-        </h3>
-
-        <p>
-          ${desc}
-        </p>
-
-        <div
-          class="availability ${full ? 'sold' : ''}"
-        >
-
+        <div class="availability ${full ? 'sold' : ''}">
           ${2 - left} / 2
-
-          <span>
-            ${availabilityText}
-          </span>
-
+          <span>${availabilityText}</span>
         </div>
 
-        <button
-          type="button"
-          data-day="${index}"
-          ${full ? 'disabled' : ''}
-        >
-
+        <button type="button" data-day="${index}" ${full ? 'disabled' : ''}>
           ${
             full
-
-              ? (
-                  lang === 'en'
-                    ? 'PORTAL FULL'
-                    : 'PORTAL JE POLN'
-                )
-
-              : (
-                  lang === 'en'
-                    ? 'CHOOSE THIS PORTAL →'
-                    : 'IZBERI TA PORTAL →'
-                )
+              ? (lang === 'en' ? 'PORTAL FULL' : 'PORTAL JE POLN')
+              : (lang === 'en' ? 'CHOOSE THIS PORTAL →' : 'IZBERI TA PORTAL →')
           }
-
         </button>
+      </div>
 
-      `;
+    `;
 
-      grid.appendChild(
-        card
-      );
-
-    }
-  );
-
+    grid.appendChild(card);
+  });
 }
 
 
