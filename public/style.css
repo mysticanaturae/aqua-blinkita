@@ -1089,7 +1089,7 @@ footer span{
 }
 
 /* =========================================================
-   THRESHOLD — CLICK LAYER FIX
+   THRESHOLD â CLICK LAYER FIX
 ========================================================= */
 
 .threshold-water{
@@ -1114,7 +1114,7 @@ footer span{
   pointer-events:auto;
 }
 /* =========================================================
-   INTRO LANGUAGE � SAME LOOK AS MAIN EN / SL BUTTON
+   INTRO LANGUAGE  SAME LOOK AS MAIN EN / SL BUTTON
 ========================================================= */
 
 .threshold-lang-toggle{
@@ -1144,7 +1144,7 @@ footer span{
 
 
 /* =========================================================
-   INTRO LANGUAGE TOGGLE � PREMIUM
+   INTRO LANGUAGE TOGGLE  PREMIUM
    Uses existing #thresholdLangToggle
 ========================================================= */
 
@@ -1212,7 +1212,7 @@ footer span{
 
 
 /* =========================================================
-   INTRO TOP RIGHT � COUNTER + LANGUAGE
+   INTRO TOP RIGHT  COUNTER + LANGUAGE
 ========================================================= */
 
 .threshold-top{
@@ -1259,7 +1259,7 @@ footer span{
 
 
 /* =========================================================
-   INTRO � HIDE SLIDE COUNTER
+   INTRO  HIDE SLIDE COUNTER
    Keep it in HTML/JS, but remove it visually.
 ========================================================= */
 
@@ -1274,7 +1274,7 @@ footer span{
 
 
 /* =========================================================
-   AQUA · IMAGE FRAMES
+   AQUA Â· IMAGE FRAMES
    Cinematic image layout
 ========================================================= */
 
@@ -1388,3 +1388,41 @@ footer span{
 
 }
 
+
+
+/* =========================================================
+   AQUA BLINKITA · FULL-SCREEN OCEAN ENTRY
+========================================================= */
+.ocean-entry{
+  position:fixed;
+  inset:0;
+  z-index:100000;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+  height:100%;
+  height:100dvh;
+  overflow:hidden;
+  background:#063b4b;
+  cursor:pointer;
+  -webkit-tap-highlight-color:transparent;
+}
+.ocean-entry img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:center;
+}
+.ocean-entry:focus-visible{
+  outline:3px solid #d5ad57;
+  outline-offset:-6px;
+}
+@media(prefers-reduced-motion:no-preference){
+  .ocean-entry img{animation:oceanEntryReveal 1.1s ease-out both}
+  @keyframes oceanEntryReveal{
+    from{opacity:.75;transform:scale(1.015)}
+    to{opacity:1;transform:scale(1)}
+  }
+}
