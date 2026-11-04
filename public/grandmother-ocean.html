@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Legend of Grandmother Ocean — AQUA · BLINKITA</title>
+<meta name="description" content="A living ocean legend of whales, dolphins, sea turtles, sacred shells and the whisper carried from the Caribbean shore of Belize.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.legend-page{background:#f4efe3;color:#102c35;overflow:hidden}
+.legend-hero{min-height:88vh;position:relative;display:flex;align-items:flex-end;color:#f4efe3;background:#092b38 url('images/0-final-atmospheric1.jpg') center/cover no-repeat}
+.legend-hero:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(3,20,27,.12),rgba(3,20,27,.28) 35%,rgba(3,20,27,.88))}
+.legend-nav{position:absolute;z-index:3;top:0;left:0;right:0;padding:28px 5vw;display:flex;justify-content:space-between;align-items:center;font-size:10px;letter-spacing:.2em}
+.legend-nav a{color:#f4efe3;text-decoration:none}
+.legend-hero-copy{position:relative;z-index:2;max-width:1120px;padding:14vh 7vw 10vh}
+.legend-eyebrow,.legend-kicker{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:#c9b27a}
+.legend-hero h1{font:400 clamp(62px,10vw,138px)/.82 'Cormorant Garamond',serif;letter-spacing:-.035em;margin:24px 0 32px;max-width:1000px}
+.legend-hero h1 em{font-style:normal;color:#dcece6}
+.legend-sub{font:400 clamp(24px,3vw,34px)/1.35 'Cormorant Garamond',serif;max-width:650px;color:#e0e8e2}
+.legend-wrap{max-width:980px;margin:auto;padding:110px 6vw 130px}
+.legend-section{margin:0 0 112px}
+.legend-section h2{font:400 clamp(48px,7vw,82px)/.92 'Cormorant Garamond',serif;margin:0 0 32px;letter-spacing:-.02em}
+.legend-section h2 em{font-style:normal;color:#60868a}
+.legend-text{max-width:760px;font:400 25px/1.52 'Cormorant Garamond',serif;color:#31484b}
+.legend-text p{margin:0 0 24px}
+.legend-text strong{font-weight:600;color:#183c45}
+.legend-image{margin:55px 0 65px;position:relative}
+.legend-image img{display:block;width:100%;max-height:620px;object-fit:cover}
+.legend-image figcaption{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:#8c887b;margin-top:12px}
+.legend-image.split{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.legend-image.split img{height:390px}
+.legend-quote{margin:0 calc(50% - 50vw) 112px;padding:105px 9vw;text-align:center;color:#f4efe3;background:radial-gradient(ellipse at 50% 10%,#286271,#0a3441 55%,#031820)}
+.legend-quote p{max-width:1050px;margin:auto;font:400 clamp(38px,5.5vw,70px)/1.04 'Cormorant Garamond',serif}
+.legend-quote em{font-style:normal;color:#d9e8df}
+.legend-keepers{display:grid;grid-template-columns:1fr 1fr;gap:0 48px;margin-top:42px}
+.keeper{padding:27px 0;border-top:1px solid #c9c1b2}
+.keeper h3{font:400 35px/1.05 'Cormorant Garamond',serif;margin:0 0 10px;color:#285965}
+.keeper p{font:400 20px/1.42 'Cormorant Garamond',serif;margin:0;color:#40575a}
+.legend-dark{margin:0 calc(50% - 50vw) 112px;padding:105px 7vw;background:#082b37;color:#f4efe3}
+.legend-dark-inner{max-width:980px;margin:auto}
+.legend-dark .legend-text{color:#d0ddda}
+.legend-dark .legend-section h2{color:#f4efe3}
+.shell-feature{display:grid;grid-template-columns:.95fr 1.05fr;gap:48px;align-items:center;margin:60px 0}
+.shell-feature img{width:100%;height:510px;object-fit:cover}
+.shell-feature .legend-text{font-size:24px}
+.legend-callout{border-left:2px solid #c9b27a;padding:8px 0 8px 26px;margin:42px 0}
+.legend-callout p{font:400 34px/1.2 'Cormorant Garamond',serif;margin:0;color:#e8e6d9}
+.legend-end{margin:0 calc(50% - 50vw);padding:115px 7vw;text-align:center;background:radial-gradient(ellipse at 50% 15%,#286271,#0a3441 55%,#031820);color:#f4efe3}
+.legend-end h2{font:400 clamp(54px,8vw,94px)/.9 'Cormorant Garamond',serif;max-width:900px;margin:0 auto 30px}
+.legend-end p{font:400 27px/1.4 'Cormorant Garamond',serif;max-width:700px;margin:0 auto 38px;color:#d0ddda}
+.legend-button{display:inline-block;padding:17px 27px;border:1px solid #c9b27a;color:#f4efe3;text-decoration:none;font-size:10px;letter-spacing:.2em}
+.legend-footer{text-align:center;padding:36px 18px;font-size:9px;letter-spacing:.2em;color:#75878a}
+.legend-footer a{color:inherit;text-decoration:none}
+@media(max-width:720px){.legend-hero{min-height:82vh}.legend-hero-copy{padding:16vh 7vw 10vh}.legend-hero h1{font-size:60px}.legend-wrap{padding:78px 7vw 90px}.legend-section{margin-bottom:82px}.legend-text{font-size:22px}.legend-quote{padding:78px 8vw;margin-bottom:82px}.legend-image.split,.legend-keepers,.shell-feature{grid-template-columns:1fr}.legend-image.split img{height:280px}.shell-feature{gap:25px}.shell-feature img{height:360px}.legend-dark{padding:80px 7vw;margin-bottom:82px}.legend-callout p{font-size:29px}.legend-end{padding:85px 7vw}.legend-end p{font-size:23px}.legend-nav{padding:20px 6vw}.legend-nav .back-text{display:none}}
+</style>
+</head>
+<body class="legend-page">
+<div class="noise"></div>
+<header class="legend-hero">
+  <nav class="legend-nav"><a href="index.html">AQUA <span style="color:#c9b27a">·</span> BLINKITA</a><a href="index.html">← <span class="back-text">BACK TO THE OCEAN PORTAL</span></a></nav>
+  <div class="legend-hero-copy">
+    <p class="legend-eyebrow">A LIVING LEGEND · A VOICE FROM THE BEGINNING</p>
+    <h1>THE LEGEND<br>OF <em>GRANDMOTHER<br>OCEAN.</em></h1>
+    <p class="legend-sub">A story of the ancient waters, the keepers of her living kingdom, and the sacred shell that carries a human whisper across the sea.</p>
+  </div>
+</header>
+<main class="legend-wrap">
+  <section class="legend-section">
+    <p class="legend-kicker">BEFORE THE BEGINNING</p>
+    <h2>Before there was a beginning, <em>there was water.</em></h2>
+    <div class="legend-text">
+      <p>Before the first footsteps crossed the land, before a name was spoken, before anyone could draw a line between one shore and another, there was the great water.</p>
+      <p>Endless, moving, breathing. Sometimes gentle as a lullaby. Sometimes powerful beyond every human measure. It held the memory of rain, rivers, stars and all the life that would one day rise from its depths.</p>
+      <p>In this living story, we call her <strong>Grandmother Ocean</strong> — not because the sea belongs to one name or one tradition, but because the ocean can feel like an elder presence: vast enough to hold our questions, patient enough to receive our silence, and always moving.</p>
+      <p>She does not speak in the way people speak. Her language is tide and current, salt and wind, the shimmer of light beneath the surface, the long rhythm of waves returning to shore.</p>
+    </div>
+    <figure class="legend-image"><img src="images/1-caribbeanshorline.jpg" alt="The Caribbean Sea reaching the shore in Belize"><figcaption>THE CARIBBEAN · A SHORELINE IN BELIZE</figcaption></figure>
+  </section>
+
+  <div class="legend-quote"><p>She is not silent.<br><em>We have simply become unfamiliar with the language of water.</em></p></div>
+
+  <section class="legend-section">
+    <p class="legend-kicker">THE KEEPERS OF HER LIVING KINGDOM</p>
+    <h2>Many lives. <em>One great ocean.</em></h2>
+    <div class="legend-text">
+      <p>Grandmother Ocean is never empty. Her kingdom is a living tapestry, woven from creatures large enough to be seen from afar and beings so small they disappear into a grain of sand. Every life has its place in the great movement of the sea.</p>
+    </div>
+    <div class="legend-keepers">
+      <article class="keeper"><h3>Whales · Keepers of the Ancient Song</h3><p>Across immense distances, whales send their deep calls through the water. In the legend, their songs are the ocean's oldest remembering — a reminder that sound can travel where eyes cannot see.</p></article>
+      <article class="keeper"><h3>Dolphins · Messengers of Joy</h3><p>Playful, curious and finely attuned to one another, dolphins move through the waves like flashes of living light. They remind us that connection can be intelligent, joyful and free.</p></article>
+      <article class="keeper"><h3>Sea Turtles · Keepers of the Way Home</h3><p>Across open water, sea turtles travel with an extraordinary sense of direction. Their long journeys carry the story of return: the instinct to find the place where life began.</p></article>
+      <article class="keeper"><h3>Manta Rays · Wings of the Deep</h3><p>With wide, effortless wings, manta rays glide through the blue. They are the quiet dancers of the deep, teaching the art of moving with the current rather than fighting it.</p></article>
+      <article class="keeper"><h3>Coral Gardens · The Living Cities</h3><p>Coral reefs are not stone gardens but living communities. Countless forms of life find shelter among their intricate branches, reminding us that an entire world can flourish through relationship.</p></article>
+      <article class="keeper"><h3>The Small Keepers · The Unseen Weave</h3><p>Seahorses, tiny fish, crabs, starfish, shells, plankton and seabirds each belong to the great web. The ocean's wonder is not measured by size. Even the smallest life helps shape the whole.</p></article>
+    </div>
+    <figure class="legend-image"><img src="images/6-water-close-up.jpg" alt="Light and movement on the Caribbean water"><figcaption>THE LIVING SURFACE · LIGHT, CURRENT AND MOVEMENT</figcaption></figure>
+  </section>
+
+  <section class="legend-section">
+    <p class="legend-kicker">THE OCEAN SHELLS · CRYSTALS OF THE SEA</p>
+    <h2>Small homes shaped by <em>the great water.</em></h2>
+    <div class="legend-text">
+      <p>A shell begins as part of a living creature's story. It grows with its maker, layer by layer, shaped by nourishment, time and the conditions of the sea. When the creature is gone, the shell may remain — a delicate architecture left behind by life.</p>
+      <p>Some spiral outward. Some open like fans. Some are smooth as porcelain; others carry ridges, patterns and colours that seem to hold the memory of the reef.</p>
+      <p>In the language of this legend, shells are <strong>crystals of the sea</strong>: not because they are all mineral crystals, but because they preserve a visible trace of a life once lived in water. Their spirals invite us to remember growth, protection, home and the unfolding journey of becoming.</p>
+    </div>
+    <figure class="legend-image split"><img src="images/3-shell-messenger.jpg" alt="A shell beside the Caribbean shore"><img src="images/4-hand-shell-water.jpg" alt="A shell held above the water"></figure>
+  </section>
+</main>
+
+<section class="legend-dark">
+  <div class="legend-dark-inner">
+    <section class="legend-section">
+      <p class="legend-kicker">THE SACRED SHELL · THE ORIGINAL SOUND OF CREATION</p>
+      <h2>Before words, <em>there was sound.</em></h2>
+      <div class="legend-text">
+        <p>Before language gave shape to thought, there was breath. There was vibration. There was the deep pulse of existence — the sound of wind moving through the world, of water meeting stone, of a voice calling across a distance.</p>
+        <p>When a shell becomes a sacred instrument, its natural form becomes a chamber for breath. The human breath enters; a deep, resonant tone emerges. It is not a word, and it does not need to be translated. It is a vibration offered to the open space.</p>
+        <p>Here, in the poetic language of AQUA BLINKITA, this sound is called <strong>the Original Sound of Creation</strong> — a way of naming the feeling that something ancient and wordless can move through a single breath.</p>
+      </div>
+      <div class="shell-feature">
+        <img src="images/3-shell-messenger.jpg" alt="The shell messenger at the Caribbean shore">
+        <div class="legend-text">
+          <p class="legend-kicker">CASITA CORNUTA · THE SHELL MESSENGER</p>
+          <p>My own <strong>Casita Cornuta</strong> is a 26-centimetre ocean shell transformed into a sacred instrument. When I bring it to my lips and sound its voice, the tone travels out over the Caribbean water.</p>
+          <p>It has become the heart of my ocean practice: a meeting of breath, shell, sea and intention. A sound that carries what ordinary words sometimes cannot hold.</p>
+          <div class="legend-callout"><p>Your name. Your intention. One breath carried across the water.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="legend-section">
+      <p class="legend-kicker">A WHISPER TO GRANDMOTHER OCEAN</p>
+      <h2>I carry your whisper <em>to the Caribbean.</em></h2>
+      <div class="legend-text">
+        <p>When someone entrusts me with their name and intention, I carry them to the Caribbean shore in Belize. I stand beside the water with that one person in mind. I hold their intention with care, bring the shell to my lips, and sound its voice toward the open sea.</p>
+        <p>The shell becomes a messenger. The breath becomes a whisper. The person's name and intention are placed into a moment that is real, personal and held beside the ocean.</p>
+        <p>You do not need to travel to Belize or perform anything yourself. I make this journey to the shore on your behalf, on the Ocean Portal day you have chosen.</p>
+      </div>
+      <figure class="legend-image"><img src="images/5-caribbean-shoreline.jpg" alt="A quiet Caribbean shoreline in Belize"><figcaption>THE SHORE WHERE EACH PERSONAL OCEAN ENCOUNTER TAKES PLACE</figcaption></figure>
+    </section>
+  </div>
+</section>
+
+<main class="legend-wrap">
+  <section class="legend-section">
+    <p class="legend-kicker">WHEN GRANDMOTHER OCEAN WHISPERS BACK</p>
+    <h2>The art of <em>listening.</em></h2>
+    <div class="legend-text">
+      <p>After the shell has sounded and the whisper has been carried into the open air, I become still. I stay beside the sea. I listen to the movement of the waves, the changing tide, the wind, the pauses between sounds — and to what is moving quietly within me.</p>
+      <p>I do not arrive with a message already written. I do not decide in advance what the ocean should say. I give the encounter room to unfold.</p>
+      <p>Sometimes an impression begins as a feeling. Sometimes an image, a word, a memory or a quiet knowing comes into focus. Sometimes the movement of the water itself becomes the moment that stays with me. I receive these impressions intuitively, with care, and shape them into a personal reflection for the person whose name and intention I have carried.</p>
+      <p>Every encounter is different because every person, intention and portal day is different. The message is not taken from a script or selected from a collection of ready-made words. It is written after that particular moment by the sea.</p>
+    </div>
+    <figure class="legend-image"><img src="images/8-ocean-message.jpg" alt="A personal ocean message from the Caribbean shore"><figcaption>A MESSAGE TAKES SHAPE AFTER THE MOMENT BY THE SEA</figcaption></figure>
+    <div class="legend-callout"><p>First, I carry your whisper to the ocean. Then, I listen for what emerges. And finally, I bring a personal message back to you.</p></div>
+  </section>
+
+  <div class="legend-quote"><p>Every whisper deserves a moment<br><em>to be carried, received and remembered.</em></p></div>
+
+  <section class="legend-section">
+    <p class="legend-kicker">WHEN HUMAN BEINGS FORGOT TO LISTEN</p>
+    <h2>We learned to speak louder. <em>Not always to listen deeper.</em></h2>
+    <div class="legend-text">
+      <p>We have filled our days with noise, speed and endless words. We search for answers in places that move quickly, while the ocean continues to teach through rhythm: the tide comes in, the tide goes out. Nothing is held forever. Nothing is still forever.</p>
+      <p>Perhaps this is why the shore can feel like a threshold. We arrive carrying what has become too heavy, too tangled or too important to leave unspoken. And for a moment, we stand before something larger than our own thoughts.</p>
+      <p>The invitation of Grandmother Ocean is simple: pause. Feel. Remember that listening is also a way of being in relationship with the world.</p>
+    </div>
+  </section>
+
+  <section class="legend-section">
+    <p class="legend-kicker">WHY THE CARIBBEAN SEA?</p>
+    <h2>Because this is where <em>my ocean story lives.</em></h2>
+    <div class="legend-text">
+      <p>My relationship with this practice is rooted in the place where I live: the Caribbean coast of Belize. This is the water I return to, the horizon I know, the shore where I sound my shell and make each personal encounter.</p>
+      <p>The Caribbean is not presented as the only sacred sea, or as a place more worthy than any other ocean. It is simply the real and living setting of my work. Its light, wind, tides and shoreline are part of the experience I can personally offer.</p>
+      <p>From this shore, a whisper begins its journey — even when the person who sent it is on the other side of the world.</p>
+    </div>
+  </section>
+
+  <section class="legend-section">
+    <p class="legend-kicker">AND NOW, I SPEAK TO YOU</p>
+    <h2>A message from <em>Grandmother Ocean.</em></h2>
+    <div class="legend-text">
+      <p>Come closer, little one.</p>
+      <p>You do not have to know the perfect words. You do not have to arrive without fear, without questions, or with everything already understood.</p>
+      <p>Bring what is true for you. Bring the name you carry in your heart. Bring the wish you have barely dared to speak, the change you are ready to welcome, the weight you are ready to lay down.</p>
+      <p>I will not ask you to become someone else. I will remind you to listen for the life that is already moving within you.</p>
+      <p>Watch how I return to the shore. Watch how I release what I cannot keep. Watch how I make room for what comes next.</p>
+      <p>And when you are ready, let your whisper travel.</p>
+    </div>
+  </section>
+
+  <section class="legend-section">
+    <p class="legend-kicker">THE OCEAN PORTALS · THIRTEEN ENCOUNTERS</p>
+    <h2>Thirteen doorways. <em>One living ocean.</em></h2>
+    <div class="legend-text">
+      <p>The Ocean Portals are selected days, each connected with a chosen Tzolk'in energy. They are not simply thirteen consecutive dates. Each portal has its own place in the calendar, its own character and its own invitation.</p>
+      <p>You may choose one encounter, carrying one name and one intention to a selected portal day. Or you may enter the longer journey through all thirteen selected portals, allowing each encounter to unfold on its own day.</p>
+      <p>For every chosen day, I go to the shore, sound the Shell Messenger, listen and create a personal message. The thirteen encounters become thirteen distinct moments, gathered into one personal ocean journey.</p>
+    </div>
+  </section>
+</main>
+
+<section class="legend-end">
+  <p class="legend-eyebrow">A WHISPER FROM THE CARIBBEAN</p>
+  <h2>The ocean is calling.<br>Will you listen?</h2>
+  <p>Your name. Your intention. Carried to Grandmother Ocean from the Caribbean shores of Belize — and a personal message brought back to you.</p>
+  <a class="legend-button" href="index.html#portals">EXPLORE THE OCEAN PORTALS</a>
+</section>
+<footer class="legend-footer">AQUA · BLINKITA · <a href="index.html">RETURN TO THE CARIBBEAN OCEAN PORTAL</a></footer>
+</body>
+</html>

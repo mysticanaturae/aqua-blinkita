@@ -1089,6 +1089,9 @@ const translations = {
     readWater:
       'READ THE STORY OF SPEAKING TO WATER →',
 
+    readGrandmother:
+      'DISCOVER THE LEGEND OF GRANDMOTHER OCEAN →',
+
     aquaEyebrow:
       'THE AQUA LEMU CURRENT',
 
@@ -1390,6 +1393,9 @@ const translations = {
 
     readWater:
       'PREBERI ZGODBO O GOVORJENJU Z VODO →',
+
+    readGrandmother:
+      'SPOZNAJ LEGENDO O BABICI OCEAN →',
 
     aquaEyebrow:
       'TOK AQUA LEMU',
