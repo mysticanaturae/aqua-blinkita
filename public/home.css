@@ -1,0 +1,1661 @@
+﻿:root {
+  --ink: #24434a;
+  --muted: #688087;
+  --sea: #6d9d9c;
+  --sea-dark: #3e7477;
+  --cream: #f7f5ee;
+  --sand: #e9dfcf;
+  --gold: #b69a69;
+  --white: #fffefa;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--cream);
+  font-family: "DM Sans", sans-serif;
+  font-weight: 300;
+}
+button, input, textarea { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+a { color: inherit; text-decoration: none; }
+
+.entry-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: #e9f0ed;
+  transition: opacity .7s ease, visibility .7s ease;
+}
+.entry-screen.is-hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+.entry-inner { width: min(540px, 100%); text-align: center; }
+.entry-blank { display: block; width: min(100%, 460px); max-height: 58vh; object-fit: contain; margin: auto; }
+.entry-prompt { margin: 22px 0 16px; color: var(--ink); letter-spacing: .12em; font-size: 11px; text-transform: uppercase; }
+.language-choices { display: flex; justify-content: center; gap: 12px; }
+.language-choices button {
+  border: 1px solid #9eb7b0; background: transparent; color: var(--ink);
+  padding: 12px 22px; letter-spacing: .12em; font-size: 10px; cursor: pointer;
+}
+.language-choices button:hover { background: #d9e7e1; }
+.flyer-enter { display: block; width: min(100%, 460px); margin: auto; padding: 0; border: 0; background: none; cursor: pointer; }
+.flyer-enter img { display: block; width: 100%; max-height: 65vh; object-fit: contain; }
+.flyer-enter span { display: inline-block; margin-top: 14px; padding: 12px 22px; background: var(--sea-dark); color: white; letter-spacing: .14em; font-size: 10px; }
+
+.site-header {
+  height: 76px; display: flex; align-items: center; justify-content: space-between;
+  padding: 0 clamp(22px, 6vw, 90px); position: relative; z-index: 2;
+  background: rgba(248,247,241,.86); border-bottom: 1px solid rgba(83,125,124,.12);
+}
+.wordmark { font-size: 15px; letter-spacing: .2em; font-weight: 600; }
+.wordmark span { color: var(--sea-dark); font-weight: 300; }
+.header-right { display: flex; gap: 24px; align-items: center; }
+.header-note { font-size: 10px; letter-spacing: .1em; color: var(--muted); }
+.lang-switch { border: 0; background: none; color: var(--sea-dark); font-size: 11px; letter-spacing: .12em; cursor: pointer; }
+
+.hero {
+  min-height: 620px; position: relative; display: flex; align-items: center;
+  overflow: hidden; background: linear-gradient(105deg, #e7efea 0%, #e8eeea 45%, #d6e5e2 100%);
+}
+.hero-art {
+  position: absolute; inset: 0;
+  background-image: url("images/flyers/babica-ocean-flyer-blank-transparent.jpg");
+  background-repeat: no-repeat; background-position: right center;
+  background-size: contain; opacity: .72; pointer-events: none;
+}
+.hero-content { position: relative; z-index: 1; width: min(620px, 90%); margin-left: clamp(24px, 10vw, 150px); padding: 80px 0; }
+.eyebrow { color: var(--sea-dark); font-size: 10px; letter-spacing: .24em; font-weight: 500; }
+.hero h1 { font: 400 clamp(54px, 7vw, 92px)/.98 "Cormorant Garamond", serif; margin: 24px 0; color: #294950; }
+.hero-subtitle { max-width: 430px; font-size: 14px; line-height: 1.9; color: #557078; }
+.text-link { display: inline-block; margin-top: 34px; padding-bottom: 9px; border-bottom: 1px solid var(--gold); font-size: 10px; letter-spacing: .18em; color: var(--sea-dark); }
+
+.intention-section { max-width: 920px; margin: auto; padding: 110px 28px 120px; }
+.section-heading { text-align: center; max-width: 660px; margin: 0 auto 48px; }
+.section-heading h2 { margin: 12px 0; font: 400 clamp(42px, 5vw, 60px)/1.05 "Cormorant Garamond", serif; }
+.section-heading > p:last-child { color: var(--muted); font-size: 13px; line-height: 1.8; }
+.form-top { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+#personalForm label > span { display: block; margin-bottom: 9px; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+#personalForm input, #personalForm textarea {
+  width: 100%; border: 1px solid #d6ded8; border-radius: 0; background: rgba(255,255,255,.55);
+  padding: 15px; color: var(--ink); outline: none;
+}
+#personalForm input:focus, #personalForm textarea:focus { border-color: var(--sea); }
+.intention-heading { text-align: center; margin: 48px 0 20px; }
+.intention-heading h3 { font: 400 30px "Cormorant Garamond", serif; margin: 0 0 6px; }
+.intention-heading p { font-size: 11px; color: var(--muted); }
+.intention-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
+.intention-chip {
+  min-height: 96px; border: 1px solid #d6dfd9; background: rgba(255,255,255,.46);
+  color: var(--ink); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 9px;
+  cursor: pointer; transition: .2s;
+}
+.intention-chip span { font-size: 22px; color: var(--gold); }
+.intention-chip b { font-size: 9px; letter-spacing: .1em; font-weight: 500; }
+.intention-chip.selected { background: #dce9e3; border-color: var(--sea-dark); box-shadow: inset 0 0 0 1px var(--sea-dark); }
+.message-label { display: block; margin-top: 34px; }
+#personalForm textarea { resize: vertical; line-height: 1.7; }
+.primary-button {
+  display: block; margin: 30px auto 0; padding: 17px 34px; border: 0;
+  background: var(--sea-dark); color: white; font-size: 10px; letter-spacing: .16em; cursor: pointer;
+}
+.primary-button:hover { background: #315f62; }
+.form-note { text-align: center; color: var(--muted); font-size: 10px; line-height: 1.7; margin-top: 15px; }
+
+.windows-section { padding: 90px clamp(20px, 6vw, 90px) 110px; background: #e9efeb; }
+.windows-section .section-heading { margin-bottom: 42px; }
+.window-grid { max-width: 1200px; margin: auto; display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; }
+.content-window {
+  grid-column: span 2; min-height: 310px; position: relative; display: flex; align-items: flex-end;
+  overflow: hidden; border: 0; padding: 0; text-align: left; cursor: pointer; color: white;
+  background-color: #6f9693; background-size: cover; background-position: center;
+}
+.content-window:nth-child(4), .content-window:nth-child(5) { grid-column: span 3; min-height: 270px; }
+.content-window::before { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(21,49,52,.78), rgba(21,49,52,.02) 75%); transition: .35s; }
+.content-window:hover::before { background: linear-gradient(0deg, rgba(21,49,52,.86), rgba(21,49,52,.12)); }
+.window-grandmother { background-image: url("images/flyers/babica-ocean-flyer-blank-transparent.jpg"), linear-gradient(135deg,#a8c7c0,#688e8b); }
+.window-water { background-image: linear-gradient(0deg,rgba(21,49,52,.30),rgba(21,49,52,.02)),url("images/6-water-close-up.jpg"); }
+.window-portals { background-image: url("images/portal-03-water-offering.webp"); }
+.window-reiki { background-image: linear-gradient(0deg,rgba(21,49,52,.30),rgba(21,49,52,.02)),url("images/7-aqua-lemu.jpg"); }
+.window-prepare { background-image: linear-gradient(0deg,rgba(21,49,52,.30),rgba(21,49,52,.02)),url("images/4-hand-shell-water.jpg"); }
+.window-number { position: absolute; top: 20px; left: 22px; font: 300 28px "Cormorant Garamond", serif; color: rgba(255,255,255,.8); }
+.window-bottom { position: relative; z-index: 1; display: grid; gap: 9px; padding: 25px; width: 100%; }
+.window-bottom small { font-size: 9px; letter-spacing: .2em; color: #e5d8b9; }
+.window-bottom strong { max-width: 300px; font: 400 30px/1.05 "Cormorant Garamond", serif; }
+.window-bottom i { position: absolute; right: 24px; bottom: 25px; font-style: normal; font-size: 20px; }
+
+.site-footer { min-height: 90px; display: flex; align-items: center; justify-content: space-between; padding: 20px clamp(22px, 6vw, 90px); color: var(--muted); font-size: 10px; letter-spacing: .12em; }
+.site-footer span:first-child { color: var(--sea-dark); font-weight: 600; }
+
+.portal-overlay { display: none; position: fixed; inset: 0; z-index: 500; background: rgba(23,48,51,.72); padding: 24px; overflow-y: auto; }
+.portal-overlay.open { display: block; }
+.portal-dialog { position: relative; width: min(1120px, 100%); margin: 25px auto; padding: clamp(25px, 5vw, 58px); background: #f7f5ee; }
+.portal-close { position: absolute; top: 15px; right: 20px; border: 0; background: none; color: var(--ink); font-size: 32px; cursor: pointer; }
+.portal-dialog h2 { margin: 8px 0; font: 400 clamp(42px, 5vw, 58px) "Cormorant Garamond", serif; }
+.portal-intro { color: var(--muted); font-size: 13px; }
+.month-label { margin: 30px 0 18px; color: var(--sea-dark); font-size: 10px; letter-spacing: .2em; }
+.portal-grid { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 18px; }
+.portal-card { min-width: 0; background: #fffefa; border: 1px solid #e5e4dc; }
+.portal-card-image { width: 100%; background: #e5ece7; }
+.portal-card-image img { display: block; width: 100%; height: auto; object-fit: contain; }
+.portal-card-body { padding: 15px; }
+.portal-date { color: var(--sea-dark); font-size: 9px; letter-spacing: .1em; }
+.portal-kin { color: var(--gold); font-size: 11px; margin-top: 5px; }
+.portal-card h3 { font: 500 23px/1.05 "Cormorant Garamond",serif; margin: 9px 0; }
+.portal-card p { font-size: 11px; line-height: 1.6; color: var(--muted); }
+.portal-card button { width: 100%; padding: 11px 7px; border: 1px solid #8daaa2; background: transparent; color: var(--sea-dark); font-size: 9px; letter-spacing: .08em; cursor: pointer; }
+.portal-card button:disabled { opacity: .45; cursor: not-allowed; }
+.portal-card.full { opacity: .7; }
+.loading-portals { color: var(--muted); }
+
+@media (max-width: 760px) {
+  .header-note { display: none; }
+  .site-header { height: 64px; }
+  .hero { min-height: 600px; align-items: flex-start; }
+  .hero-art { background-position: center bottom; background-size: auto 67%; opacity: .55; }
+  .hero-content { margin: 0; padding: 65px 25px 260px; }
+  .hero h1 { font-size: 60px; }
+  .intention-section { padding: 75px 20px; }
+  .form-top { grid-template-columns: 1fr; }
+  .intention-grid { grid-template-columns: repeat(2, 1fr); }
+  .intention-chip { min-height: 82px; }
+  .window-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .content-window, .content-window:nth-child(4), .content-window:nth-child(5) { grid-column: span 1; min-height: 230px; }
+  .content-window:first-child { grid-column: span 2; }
+  .window-bottom { padding: 16px; }
+  .window-bottom strong { font-size: 25px; }
+  .window-bottom i { right: 14px; bottom: 16px; }
+  .portal-grid { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; }
+  .portal-dialog { padding: 35px 17px; margin: 0 auto; }
+  .portal-overlay { padding: 10px; }
+  .site-footer { gap: 12px; flex-wrap: wrap; }
+}
+@media (max-width: 380px) {
+  .portal-grid { grid-template-columns: 1fr; }
+}
+
+/* =========================================================
+   FULLSCREEN GRANDMOTHER OCEAN INTRO
+========================================================= */
+
+.entry-screen {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  padding: 0;
+  overflow: hidden;
+  background: #dce9e5;
+}
+
+.entry-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 20px clamp(42px, 8vh, 85px);
+  text-align: center;
+}
+
+.entry-blank {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-height: none;
+  margin: 0;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.entry-prompt {
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  margin: 0 0 12px;
+  padding: 11px 20px;
+  border: 1px solid rgba(255,255,255,.55);
+  border-radius: 3px;
+  background: rgba(248,250,246,.72);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #294950;
+  font-size: 10px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+}
+
+.language-choices {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 7px;
+  border: 1px solid rgba(255,255,255,.65);
+  border-radius: 4px;
+  background: rgba(248,250,246,.72);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.language-choices button {
+  min-width: 130px;
+  padding: 14px 20px;
+  border: 1px solid transparent;
+  background: rgba(255,255,255,.25);
+  color: #294950;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .15em;
+  cursor: pointer;
+  transition: background .25s, color .25s;
+}
+
+.language-choices button:hover {
+  background: #527f7d;
+  color: white;
+}
+
+.entry-screen .flyer-enter {
+  display: none !important;
+}
+
+@media (max-width: 600px) {
+  .entry-blank {
+    object-position: center center;
+  }
+
+  .entry-inner {
+    padding-bottom: 45px;
+  }
+
+  .language-choices {
+    width: min(100%, 340px);
+  }
+
+  .language-choices button {
+    min-width: 0;
+    flex: 1;
+    padding: 14px 10px;
+    font-size: 9px;
+  }
+}
+
+/* ===== A4 OCEAN ENTRY — REFINED ===== */
+
+.entry-screen {
+  padding: 12px;
+  background: #e9f0ed;
+}
+
+.entry-inner {
+  position: relative;
+  width: min(90vw, 595px, calc(90vh * 0.7071));
+  aspect-ratio: 210 / 297;
+  height: auto;
+  max-height: 90vh;
+  display: block;
+  margin: auto;
+}
+
+.entry-blank {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-height: none;
+  object-fit: contain;
+  margin: 0;
+}
+
+.entry-prompt {
+  position: absolute;
+  z-index: 5;
+  left: 50%;
+  bottom: 23%;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: 90%;
+  margin: 0;
+  padding: 9px 16px;
+  color: #294950;
+  background: rgba(248,247,241,.78);
+  font-size: 10px;
+  letter-spacing: .15em;
+  text-align: center;
+  backdrop-filter: blur(8px);
+}
+
+.language-choices {
+  position: absolute;
+  z-index: 6;
+  left: 50%;
+  bottom: 13%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  gap: 9px;
+  width: max-content;
+  max-width: 95%;
+  padding: 7px;
+  background: rgba(248,247,241,.78);
+  backdrop-filter: blur(8px);
+}
+
+.language-choices button {
+  min-width: 112px;
+  padding: 12px 15px;
+  border: 1px solid #8daaa2;
+  background: rgba(255,255,255,.65);
+  color: #294950;
+  font-size: 9px;
+  letter-spacing: .12em;
+  cursor: pointer;
+}
+
+.language-choices button:hover {
+  background: #dce9e3;
+}
+
+.flyer-enter {
+  display: none !important;
+}
+
+@media (max-width: 600px) {
+  .entry-inner {
+    width: min(94vw, calc(94vh * 0.7071));
+    max-height: 94vh;
+  }
+
+  .entry-prompt {
+    bottom: 23%;
+    font-size: 9px;
+  }
+
+  .language-choices {
+    bottom: 12%;
+  }
+
+  .language-choices button {
+    min-width: 100px;
+    padding: 11px 12px;
+  }
+}
+
+
+/* ===== GRANDMOTHER OCEAN — FULL SCREEN ENTRY ===== */
+.entry-screen {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 99999 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  min-height: 100vh !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: hidden !important;
+  background: #e9f0ed !important;
+}
+
+.entry-inner {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  aspect-ratio: auto !important;
+  margin: 0 !important;
+  display: block !important;
+}
+
+.entry-blank {
+  position: absolute !important;
+  inset: 0 !important;
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  margin: 0 !important;
+}
+
+.entry-prompt {
+  position: absolute !important;
+  z-index: 10 !important;
+  left: 50% !important;
+  bottom: 19% !important;
+  transform: translateX(-50%) !important;
+  width: max-content !important;
+  max-width: 90% !important;
+  padding: 10px 18px !important;
+  margin: 0 !important;
+  color: #294950 !important;
+  background: rgba(248,247,241,.82) !important;
+  text-align: center !important;
+  font-size: 11px !important;
+  letter-spacing: .16em !important;
+  backdrop-filter: blur(8px);
+}
+
+.language-choices {
+  position: absolute !important;
+  z-index: 11 !important;
+  left: 50% !important;
+  bottom: 10% !important;
+  transform: translateX(-50%) !important;
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  width: max-content !important;
+  max-width: 94% !important;
+  padding: 8px !important;
+  background: rgba(248,247,241,.84) !important;
+  backdrop-filter: blur(8px);
+}
+
+.language-choices button {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-width: 120px !important;
+  padding: 13px 18px !important;
+  border: 1px solid #8daaa2 !important;
+  background: rgba(255,255,255,.7) !important;
+  color: #294950 !important;
+  font-size: 10px !important;
+  letter-spacing: .12em !important;
+  cursor: pointer !important;
+}
+
+.language-choices button:hover {
+  background: #dce9e3 !important;
+}
+
+.flyer-enter {
+  display: none !important;
+}
+
+.entry-screen.is-hidden {
+  display: none !important;
+}
+
+@media (max-width: 600px) {
+  .entry-blank {
+    object-fit: cover !important;
+    object-position: center center !important;
+  }
+
+  .entry-prompt {
+    bottom: 19% !important;
+    font-size: 9px !important;
+  }
+
+  .language-choices {
+    bottom: 9% !important;
+    gap: 7px !important;
+  }
+
+  .language-choices button {
+    min-width: 105px !important;
+    padding: 12px 13px !important;
+    font-size: 9px !important;
+  }
+}
+
+/* =========================================
+   GRANDMOTHER OCEAN – THE WHISPER
+   AQUA BLINKITA
+========================================= */
+
+.whisper-section {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(85px, 11vw, 145px) 24px;
+  background:
+    radial-gradient(ellipse at 50% 42%, rgba(255,255,255,.92), transparent 65%),
+    linear-gradient(180deg, #f1f3ed 0%, #e8efeb 48%, #f7f5ee 100%);
+  text-align: center;
+}
+
+.whisper-section::before,
+.whisper-section::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: min(720px, 90%);
+  height: 1px;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(126, 164, 157, .38),
+    rgba(193, 164, 112, .42),
+    rgba(126, 164, 157, .38),
+    transparent
+  );
+}
+
+.whisper-section::before {
+  top: 38px;
+}
+
+.whisper-section::after {
+  bottom: 38px;
+}
+
+.whisper-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 690px;
+  margin: 0 auto;
+}
+
+.whisper-eyebrow {
+  margin: 0 0 32px;
+  color: #9b8050;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .28em;
+  line-height: 1.8;
+}
+
+.whisper-inner h2 {
+  margin: 0;
+  color: #315c60;
+  font: italic 400 clamp(42px, 6vw, 66px)/1.08 "Cormorant Garamond", serif;
+}
+
+.whisper-opening {
+  margin: 4px 0 0;
+  color: #315c60;
+  font: italic 400 clamp(27px, 4vw, 39px)/1.3 "Cormorant Garamond", serif;
+}
+
+.whisper-divider {
+  margin: 34px 0;
+  color: #b69a68;
+  font-size: 20px;
+}
+
+.whisper-inner > p:not(.whisper-eyebrow):not(.whisper-signature) {
+  margin: 0 auto 22px;
+  color: #526e70;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 2;
+}
+
+.whisper-inner > .whisper-emphasis {
+  margin: 34px auto !important;
+  color: #315c60 !important;
+  font: italic 400 clamp(30px, 4vw, 43px)/1.25 "Cormorant Garamond", serif !important;
+}
+
+.whisper-inner > .whisper-closing {
+  max-width: 610px;
+  margin-top: 38px !important;
+  color: #315c60 !important;
+  font: italic 400 clamp(24px, 3.5vw, 34px)/1.5 "Cormorant Garamond", serif !important;
+}
+
+.whisper-signature {
+  margin: 30px 0 0;
+  color: #9b8050;
+  font: italic 400 23px/1.4 "Cormorant Garamond", serif;
+}
+
+@media (max-width: 600px) {
+  .whisper-section {
+    padding: 78px 25px;
+  }
+
+  .whisper-section::before {
+    top: 28px;
+  }
+
+  .whisper-section::after {
+    bottom: 28px;
+  }
+
+  .whisper-eyebrow {
+    margin-bottom: 25px;
+    font-size: 9px;
+  }
+
+  .whisper-inner > p:not(.whisper-eyebrow):not(.whisper-signature) {
+    font-size: 13px;
+    line-height: 1.9;
+  }
+
+  .whisper-divider {
+    margin: 27px 0;
+  }
+}
+/* =========================================
+   AQUA BLINKITA – THE FOUR STEPS
+========================================= */
+
+.journey-intro {
+  position: relative;
+  padding: clamp(76px, 9vw, 118px) 26px;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(255,255,255,.95), transparent 65%),
+    linear-gradient(180deg, #f7f5ee 0%, #edf2ee 100%);
+}
+
+.journey-intro-inner {
+  width: min(1120px, 100%);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.journey-eyebrow {
+  margin: 0 0 22px;
+  color: #9a8055;
+  font-family: "DM Sans", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+}
+
+.journey-intro h2 {
+  max-width: 790px;
+  margin: 0 auto;
+  color: #24434a;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(37px, 5.2vw, 62px);
+  font-weight: 400;
+  line-height: 1.08;
+}
+
+.journey-lead {
+  max-width: 590px;
+  margin: 20px auto 58px;
+  color: #688087;
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.journey-steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  text-align: left;
+}
+
+.journey-step {
+  position: relative;
+  min-height: 250px;
+  padding: 28px 23px 30px;
+  border: 1px solid rgba(109,157,156,.22);
+  border-radius: 3px;
+  background: rgba(255,255,255,.58);
+  transition: transform .25s ease, background .25s ease;
+}
+
+.journey-step:hover {
+  transform: translateY(-4px);
+  background: rgba(255,255,255,.9);
+}
+
+.journey-number {
+  display: block;
+  color: #b49a6b;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 17px;
+  letter-spacing: .08em;
+}
+
+.journey-symbol {
+  display: block;
+  margin: 19px 0 13px;
+  color: #6d9d9c;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 27px;
+}
+
+.journey-step h3 {
+  margin: 0 0 12px;
+  color: #31565b;
+  font-family: "DM Sans", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .17em;
+}
+
+.journey-step p {
+  margin: 0;
+  color: #687d7e;
+  font-family: "DM Sans", sans-serif;
+  font-size: 12px;
+  line-height: 1.85;
+}
+
+.journey-quote {
+  max-width: 650px;
+  margin: 65px auto 0;
+  color: #45696b;
+}
+
+.journey-quote > span:first-child {
+  color: #b49a6b;
+  font-size: 21px;
+}
+
+.journey-quote p {
+  margin: 15px 0 14px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(23px, 3vw, 30px);
+  font-style: italic;
+  line-height: 1.35;
+}
+
+.journey-signature {
+  color: #9a8055;
+  font-family: "DM Sans", sans-serif;
+  font-size: 10px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 850px) {
+  .journey-steps {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .journey-step {
+    min-height: 220px;
+  }
+}
+
+@media (max-width: 520px) {
+  .journey-intro {
+    padding: 70px 20px;
+  }
+
+  .journey-lead {
+    margin-bottom: 38px;
+  }
+
+  .journey-steps {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .journey-step {
+    min-height: auto;
+    padding: 23px 22px 25px;
+  }
+
+  .journey-symbol {
+    margin: 12px 0 8px;
+  }
+
+  .journey-quote {
+    margin-top: 48px;
+  }
+}
+
+
+
+/* ===== OCEAN PACKAGES ===== */
+.offers {
+  padding: 100px clamp(22px, 6vw, 90px) 115px;
+  background: #f7f5ee;
+}
+
+.offers-heading {
+  max-width: 660px;
+  margin: 0 auto 48px;
+  text-align: center;
+}
+
+.offers-heading h2 {
+  margin: 12px 0;
+  color: #294950;
+  font: 400 clamp(42px, 5vw, 60px)/1.05 "Cormorant Garamond", serif;
+}
+
+.offer-grid {
+  width: min(100%, 1040px);
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.offer {
+  display: flex;
+  flex-direction: column;
+  padding: clamp(25px, 4vw, 42px);
+  border: 1px solid #d9dfd7;
+  background: #fffefa;
+}
+
+.offer.portal {
+  border-color: #b9c9bd;
+  background: #eef2ed;
+}
+
+.offer h3 {
+  margin: 15px 0 4px;
+  color: #294950;
+  font: 400 clamp(48px, 6vw, 64px)/1 "Cormorant Garamond", serif;
+}
+
+.offer.free h3 {
+  font-size: clamp(30px, 3.2vw, 40px);
+  letter-spacing: -0.035em;
+  white-space: nowrap;
+}
+.offer-tag {
+  min-height: 24px;
+  margin: 8px 0 22px;
+  color: #71857e;
+  font-size: 13px;
+  font-style: italic;
+}
+
+.offer-regular {
+  text-decoration: line-through;
+  margin: 15px 0 0;
+  color: #7d8b81;
+  font-size: 9px;
+  letter-spacing: .14em;
+}
+
+.offer ul {
+  display: grid;
+  gap: 13px;
+  margin: 12px 0 24px;
+  padding: 0;
+  list-style: none;
+}
+
+.offer li {
+  position: relative;
+  padding-left: 19px;
+  color: #526b68;
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+.offer li::before {
+  position: absolute;
+  left: 0;
+  color: #b69b68;
+  content: "✧";
+}
+
+.offer-muted {
+  margin: auto 0 22px;
+  color: #8b9990;
+  font: italic 15px "Cormorant Garamond", serif;
+}
+
+.offer-button {
+  width: 100%;
+  min-height: 48px;
+  margin-top: auto;
+  padding: 13px 18px;
+  border: 1px solid #496f6d;
+  background: #496f6d;
+  color: white;
+  font: 500 9px "DM Sans", sans-serif;
+  letter-spacing: .13em;
+  cursor: pointer;
+  transition: background .25s, color .25s;
+}
+
+.offer-button:hover {
+  background: #315f62;
+}
+
+.offer-button.secondary {
+  border-color: #a6b8ad;
+  background: transparent;
+  color: #496f6d;
+}
+
+.offer-button.secondary:hover {
+  background: #e5ece6;
+}
+
+@media (max-width: 900px) {
+  .offer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .offers {
+    padding: 75px 20px 85px;
+  }
+
+  .offer-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .offer {
+    padding: 28px 24px;
+  }
+}
+
+/* =========================================================
+   OCEAN PORTALS — COMPACT IMAGE GRID
+   ========================================================= */
+
+.portal-overlay {
+  padding: 16px;
+  overflow-y: auto;
+}
+
+.portal-dialog {
+  width: min(1180px, 100%);
+  max-height: calc(100dvh - 32px);
+  margin: 0 auto;
+  padding: clamp(22px, 3vw, 38px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.portal-dialog h2 {
+  font-size: clamp(36px, 4vw, 48px);
+}
+
+.portal-intro {
+  max-width: 680px;
+  line-height: 1.6;
+}
+
+.portal-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.portal-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.portal-card-image {
+  height: 125px;
+  overflow: hidden;
+}
+
+.portal-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.portal-card-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 12px;
+}
+
+.portal-date {
+  font-size: 9px;
+  font-weight: 600;
+}
+
+.portal-kin {
+  margin-top: 4px;
+  font-size: 10px;
+}
+
+.portal-card h3 {
+  min-height: 2.1em;
+  margin: 7px 0 5px;
+  font-size: 19px;
+  line-height: 1.05;
+}
+
+.portal-card p {
+  display: -webkit-box;
+  min-height: 4.5em;
+  margin: 0 0 10px;
+  overflow: hidden;
+  font-size: 10px;
+  line-height: 1.5;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.portal-availability {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+  margin: auto 0 10px;
+  padding-top: 8px;
+  border-top: 1px solid #e5e4dc;
+  color: var(--sea-dark);
+  font-size: 8px;
+  letter-spacing: .06em;
+}
+
+.portal-availability strong {
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.portal-availability span {
+  text-align: right;
+}
+
+.portal-card button {
+  margin-top: 0;
+  padding: 10px 5px;
+  font-size: 8px;
+}
+
+@media (max-width: 760px) {
+  .portal-overlay {
+    padding: 8px;
+  }
+
+  .portal-dialog {
+    max-height: calc(100dvh - 16px);
+    padding: 32px 13px 18px;
+  }
+
+  .portal-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .portal-card-image {
+    height: 105px;
+  }
+
+  .portal-card-body {
+    padding: 10px;
+  }
+
+  .portal-card h3 {
+    font-size: 17px;
+  }
+
+  .portal-card p {
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 380px) {
+  .portal-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .portal-card-image {
+    height: 90px;
+  }
+
+  .portal-card-body {
+    padding: 8px;
+  }
+
+  .portal-card h3 {
+    font-size: 15px;
+  }
+}
+
+
+
+
+
+/* Selected Ocean offer */
+.offer.is-selected {
+  border: 2px solid #b69a62;
+  box-shadow: 0 8px 28px rgba(41, 73, 80, .10);
+}
+
+.offer.is-selected .offer-button {
+  background: #294950;
+  color: #fffefa;
+}
+
+.payment-return-note {
+  margin: 18px 0;
+  padding: 16px 20px;
+  border-left: 2px solid #b69a62;
+  background: #f7f4ec;
+  color: #294950;
+  line-height: 1.6;
+}
+
+/* =========================================
+   POT DAROV MATERE NARAVE – PREMIUM OKNO
+========================================= */
+
+.nature-gifts-window {
+  position: relative;
+  isolation: isolate;
+  width: min(100% - 32px, 920px);
+  margin: 46px auto 42px;
+  padding: clamp(30px, 5vw, 62px);
+  overflow: hidden;
+  text-align: center;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(255,255,255,.96), transparent 68%),
+    linear-gradient(145deg, #f8f5eb 0%, #eee8d9 52%, #f7f3e9 100%);
+  border: 1px solid rgba(174, 145, 91, .48);
+  outline: 1px solid rgba(174, 145, 91, .16);
+  outline-offset: -8px;
+  box-shadow: 0 18px 48px rgba(48, 67, 62, .08);
+}
+
+.nature-gifts-window::before,
+.nature-gifts-window::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 72px;
+  height: 1px;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, transparent, #b69a62, transparent);
+}
+
+.nature-gifts-window::before {
+  top: 22px;
+}
+
+.nature-gifts-window::after {
+  bottom: 22px;
+}
+
+.nature-gifts-window .gifts-eyebrow {
+  margin: 0 0 16px;
+  color: #8c7950;
+  letter-spacing: .25em;
+  font-size: 10px;
+}
+
+.nature-gifts-window .gifts-included {
+  display: inline-block;
+  max-width: 560px;
+  margin: 0 auto 23px;
+  padding: 9px 17px;
+  border: 1px solid rgba(174, 145, 91, .55);
+  background: rgba(255, 255, 255, .48);
+  color: #6c765f;
+  font-size: 9px;
+  line-height: 1.7;
+  letter-spacing: .14em;
+  font-weight: 600;
+}
+
+.nature-gifts-window h3 {
+  max-width: 620px;
+  margin: 0 auto 24px;
+  color: #294950;
+  font: 400 clamp(34px, 5vw, 49px)/1.08 "Cormorant Garamond", serif;
+}
+
+.nature-gifts-window > p:not(.eyebrow):not(.gifts-included) {
+  max-width: 690px;
+  margin: 0 auto 17px;
+  color: #566b68;
+  font-size: 13px;
+  line-height: 2;
+}
+
+.nature-gifts-window .gift-note {
+  max-width: 600px;
+  margin: 27px auto 0 !important;
+  padding-top: 19px;
+  border-top: 1px solid rgba(174, 145, 91, .35);
+  color: #887650 !important;
+  font-size: 11px !important;
+  letter-spacing: .035em;
+}
+
+@media (max-width: 600px) {
+  .nature-gifts-window {
+    width: calc(100% - 28px);
+    margin: 32px auto;
+    padding: 38px 24px;
+  }
+
+  .nature-gifts-window .gifts-included {
+    font-size: 8px;
+    letter-spacing: .09em;
+  }
+}
+
+/* AQUA BLINKITA – payment methods */
+.payment-methods {
+  max-width: 720px;
+  margin: 28px auto 24px;
+  padding: 25px 28px;
+  border: 1px solid rgba(174, 145, 91, .35);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, .58);
+}
+
+.payment-methods[hidden],
+.bank-details-panel[hidden] {
+  display: none !important;
+}
+
+.payment-methods h3 {
+  margin: 0 0 18px;
+  color: #294950;
+  font: 400 clamp(25px, 4vw, 32px)/1.15 "Cormorant Garamond", serif;
+  text-align: center;
+}
+
+.payment-options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px 28px;
+}
+
+.payment-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: #566b68;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.payment-option input {
+  accent-color: #9b8050;
+}
+
+.bank-details-panel {
+  max-width: 520px;
+  margin: 22px auto 0;
+  padding: 20px 22px;
+  border-top: 1px solid rgba(174, 145, 91, .35);
+  color: #566b68;
+  font-size: 13px;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+
+.bank-details-panel h4 {
+  margin: 0 0 15px;
+  color: #887650;
+  font-size: 11px;
+  letter-spacing: .13em;
+  text-align: center;
+}
+
+.bank-details-panel p {
+  margin: 5px 0;
+}
+
+.bank-details-panel strong {
+  color: #294950;
+}
+
+.bank-details-panel .bank-detail-note {
+  margin-top: 16px;
+  color: #887650;
+  font-size: 12px;
+}
+
+@media (max-width: 600px) {
+  .payment-methods {
+    margin: 22px 14px;
+    padding: 22px 17px;
+  }
+
+  .payment-options {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 13px;
+  }
+
+  .bank-details-panel {
+    padding: 18px 5px 5px;
+  }
+}
+
+/* AQUA BLINKITA – ocean experience deadline and form spacing */
+.nature-gifts-window {
+  margin-bottom: 12px;
+}
+
+@media (max-width: 600px) {
+  .nature-gifts-window {
+    margin-bottom: 12px;
+  }
+}
+
+#personalForm .offer-deadline {
+  margin: 16px auto 0;
+  padding: 0 16px;
+  color: #8c7950;
+  text-align: center;
+  font-size: 11px;
+  line-height: 1.7;
+  letter-spacing: .045em;
+}
+
+#personalForm .primary-button {
+  margin-top: 18px;
+}
+
+/* =========================================================
+   AQUA BLINKITA – THREE OCEAN OFFER WINDOWS
+   ========================================================= */
+
+.offer-grid {
+  align-items: stretch;
+  gap: 22px;
+}
+
+.offer {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 62px clamp(22px, 3vw, 34px) 30px;
+  border-radius: 3px;
+  box-shadow: 0 12px 32px rgba(41, 73, 80, .07);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.offer:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(41, 73, 80, .12);
+}
+
+/* Zavihek z rokom – skupna osnova */
+.offer::before {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: block;
+  padding: 12px 10px;
+  text-align: center;
+  font: 600 9px/1.4 "DM Sans", sans-serif;
+  letter-spacing: .16em;
+  content: "POSEBNA OCEANSKA IZKUŠNJA · DO VKLJUČNO 11. 11. 2026";
+}
+
+/* Brezplačni prvi oceanski dotik */
+.offer.free {
+  border-color: #a8cec6;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(255,255,255,.95), transparent 65%),
+    linear-gradient(155deg, #edf8f3 0%, #dcefe9 55%, #f3f8ef 100%);
+}
+
+.offer.free::before {
+  color: #315f59;
+  background: linear-gradient(90deg, #c9e8df, #e5f4ed, #c9e8df);
+  border-bottom: 1px solid rgba(91, 145, 130, .25);
+}
+
+/* Oceanski šepet */
+.offer.whisper {
+  border-color: #b9c8dc;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(255,255,255,.96), transparent 65%),
+    linear-gradient(155deg, #f0f3fa 0%, #e2e9f4 55%, #f5eff8 100%);
+}
+
+.offer.whisper::before {
+  color: #4e617f;
+  background: linear-gradient(90deg, #d6e1f0, #eceaf5, #d6e1f0);
+  border-bottom: 1px solid rgba(111, 130, 164, .25);
+}
+
+/* Karibski oceanski portal */
+.offer.portal {
+  border-color: #d8b982;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(255,255,255,.96), transparent 65%),
+    linear-gradient(155deg, #fbf1df 0%, #f3e4ce 52%, #f9eee5 100%);
+}
+
+.offer.portal::before {
+  color: #795b35;
+  background: linear-gradient(90deg, #e8c995, #f7e8c9, #e8c995);
+  border-bottom: 1px solid rgba(174, 135, 73, .3);
+}
+
+/* Naslovi in cene */
+.offer.free h3 {
+  color: #315f59;
+}
+
+.offer.whisper h3 {
+  color: #4e617f;
+}
+
+.offer.portal h3 {
+  color: #8b653b;
+}
+
+.offer.free .offer-tag {
+  color: #527e73;
+}
+
+.offer.whisper .offer-tag {
+  color: #697b9b;
+}
+
+.offer.portal .offer-tag {
+  color: #98764c;
+}
+
+/* Seznam darov */
+.offer.free li::before {
+  color: #70a99a;
+}
+
+.offer.whisper li::before {
+  color: #8c9cbe;
+}
+
+.offer.portal li::before {
+  color: #bd9456;
+}
+
+/* Gumbi ostanejo funkcionalno nespremenjeni */
+.offer.free .offer-button {
+  border-color: #67998c;
+  background: #67998c;
+}
+
+.offer.whisper .offer-button {
+  border-color: #7186a7;
+  background: #7186a7;
+}
+
+.offer.portal .offer-button {
+  border-color: #a77d49;
+  background: #a77d49;
+}
+
+.offer.free .offer-button.secondary {
+  color: #47796e;
+  background: rgba(255,255,255,.35);
+}
+
+.offer.whisper .offer-button.secondary {
+  color: #596e91;
+  background: rgba(255,255,255,.35);
+}
+
+.offer.free .offer-button:hover {
+  background: #4f8276;
+}
+
+.offer.whisper .offer-button:hover {
+  background: #596f91;
+}
+
+.offer.portal .offer-button:hover {
+  background: #876337;
+}
+
+/* Mobilni prikaz */
+@media (max-width: 700px) {
+  .offer {
+    padding: 60px 24px 28px;
+  }
+
+  .offer::before {
+    padding: 11px 6px;
+    font-size: 8px;
+    letter-spacing: .11em;
+  }
+}
+
+@media (max-width: 360px) {
+  .offer::before {
+    font-size: 7px;
+    letter-spacing: .07em;
+  }
+}
+
+/* AQUA BLINKITA – BILINGUAL OCEAN OFFER TABS */
+html[lang="sl"] .offer::before {
+  content: "POSEBNA OCEANSKA IZKUŠNJA · DO VKLJUČNO 11. 11. 2026";
+}
+
+html[lang="en"] .offer::before {
+  content: "SPECIAL OCEAN EXPERIENCE · AVAILABLE THROUGH NOVEMBER 11, 2026";
+}
+
+
+/* AQUA BLINKITA - OPTIONAL OCEAN PORTAL PICKER */
+
+.portal-picker {
+  margin: 25px 0 0;
+  padding: 19px 22px 17px;
+  border: 1px solid rgba(125, 157, 151, .38);
+  border-radius: 5px;
+  background: linear-gradient(110deg, #f5f1e7, #edf3ef);
+}
+
+.portal-picker-title {
+  margin: 0 0 12px;
+  color: #647e78;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .16em;
+}
+
+.portal-picker-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 11px 19px;
+  border: 1px solid #9aab9f;
+  border-radius: 3px;
+  background: #fffdf7;
+  color: #526e68;
+  font: inherit;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .1em;
+  cursor: pointer;
+  transition: background .2s ease, color .2s ease;
+}
+
+.portal-picker-button:hover {
+  background: #647f78;
+  color: #fff;
+}
+
+.portal-picker-status {
+  margin: 11px 0 0;
+  color: #8a8980;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.portal-picker-status.has-selection {
+  color: #526e68;
+  font-weight: 600;
+}
+
+/* 13 kartic se pomika vodoravno, namesto v veliki mrezi */
+
+.portal-grid {
+  display: flex !important;
+  grid-template-columns: none !important;
+  gap: 14px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 4px 2px 15px;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+.portal-card {
+  flex: 0 0 260px;
+  min-width: 0;
+  scroll-snap-align: start;
+}
+
+.portal-grid::-webkit-scrollbar {
+  height: 5px;
+}
+
+.portal-grid::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background: #a7b9ad;
+}
+
+.portal-grid::-webkit-scrollbar-track {
+  background: #e9e8df;
+}
+
+@media (max-width: 760px) {
+  .portal-picker {
+    padding: 17px 15px;
+  }
+
+  .portal-card {
+    flex-basis: min(78vw, 280px);
+  }
+}
+
+@media (max-width: 380px) {
+  .portal-card {
+    flex-basis: 78vw;
+  }
+}
+
+
+
+.portal-picker[hidden] { display: none !important; }
