@@ -64,7 +64,7 @@
       areasHint: "Izbereš lahko več področij.",
       portalPickerTitle: "TVOJ TZOLK'IN OCEANSKI PORTAL",
       portalPickerButton: "IZBERI SVOJ OCEANSKI PORTAL",
-      portalPickerEmpty: "Izbira je neobvezna. Lahko nadaljuješ tudi brez nje.",
+      portalPickerEmpty: "Za plačljivo oceansko izkušnjo izberi enega od 13 portalnih dni. Brezplačni Prvi oceanski dotik izbire ne zahteva.",
       portalPickerSelected: "Tvoj izbrani portal",
       portalPickerChange: "SPREMENI IZBOR",
       questionLabel: "Tvoja osebna namera ali vprašanje",
@@ -172,7 +172,7 @@
       areasHint: "You may choose more than one.",
       portalPickerTitle: "YOUR TZOLK'IN OCEAN PORTAL",
       portalPickerButton: "CHOOSE YOUR OCEAN PORTAL",
-      portalPickerEmpty: "Optional. You can continue without choosing a portal.",
+      portalPickerEmpty: "Choose one of the 13 portal days for a paid Ocean experience. The free First Ocean Touch does not require a selection.",
       portalPickerSelected: "Your selected portal",
       portalPickerChange: "CHANGE SELECTION",
       questionLabel: "Your personal intention or question",
@@ -324,7 +324,7 @@
     "grandmother-ocean.html": "grandmother-ocean-sl.html",
     "water.html": "water-sl.html",
     "aqua-lemu.html": "aqua-lemu-sl.html",
-    "preparation.html": "preparation-sl.html"
+    "prepare.html": "prepare.html"
   };
 
   const page = url.pathname.split("/").pop();
@@ -795,6 +795,8 @@ My intention / question: ${data.message}`;
   applyLanguage();
   renderPortals();
 })();
+
+
 
 
 

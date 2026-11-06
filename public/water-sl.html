@@ -1,0 +1,879 @@
+﻿<!doctype html>
+<html lang="sl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Stari način pogovora z vodo — AQUA · BLINKITA</title>
+
+<meta name="description" content="Starodavni odnos med človekom in vodo, skrivnosti Karibov in zgodba Babice Ocean.">The old relationship between humans and water, the mysteries of the Caribbean, and the story of Grandmother Ocean.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="home.css">
+
+
+<style>
+body.water-page {
+  margin: 0;
+  background: var(--cream,#f7f5ee);
+  color: var(--ink,#24434a);
+  font-family: "DM Sans",sans-serif;
+}
+.water-page .story-hero {
+  min-height: 620px;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  color: var(--ink,#24434a);
+  background:
+    linear-gradient(90deg,rgba(231,239,234,.94),rgba(231,239,234,.48) 58%,rgba(231,239,234,.08)),
+    url('images/flyers/babica-ocean-flyer-blank-transparent.jpg') center/cover no-repeat;
+}
+.water-page .story-nav {
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  right: 0;
+  min-height: 76px;
+  padding: 0 clamp(22px,6vw,90px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(248,247,241,.9);
+  border-bottom: 1px solid rgba(83,125,124,.12);
+  color: var(--ink);
+}
+.water-page .story-nav a {
+  color: var(--sea-dark,#3e7477);
+  text-decoration: none;
+}
+.water-page .story-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  padding: 150px clamp(24px,10vw,150px) 90px;
+}
+.water-page .eyebrow,
+.water-page .story-kicker {
+  color: var(--sea-dark,#3e7477);
+  font-size: 10px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+}
+.water-page .story-hero h1 {
+  font: 400 clamp(58px,8vw,100px)/.92 "Cormorant Garamond",serif;
+  color: #294950;
+}
+.water-page .story-hero h1 em {
+  color: var(--sea-dark,#3e7477);
+  font-style: normal;
+}
+.water-page .story-hero-sub {
+  max-width: 570px;
+  font: 400 clamp(21px,2.5vw,27px)/1.5 "Cormorant Garamond",serif;
+  color: #49676b;
+}
+.water-page .story-content {
+  max-width: 920px;
+  margin: auto;
+  padding: 95px 28px 105px;
+}
+.water-page .story-section {
+  margin: 0 0 100px;
+}
+.water-page .story-section h2,
+.water-page .caribbean-section h2,
+.water-page .story-end h2 {
+  font: 400 clamp(40px,5.5vw,62px)/1.02 "Cormorant Garamond",serif;
+  color: #294950;
+  margin: 12px 0 28px;
+}
+.water-page .story-section h2 em {
+  color: var(--sea-dark,#3e7477);
+  font-style: normal;
+}
+.water-page .story-text {
+  max-width: 760px;
+  font: 300 14px/2 "DM Sans",sans-serif;
+  color: #526b6e;
+}
+.water-page .story-text p {
+  margin: 0 0 20px;
+}
+.water-page .story-text strong {
+  color: #294950;
+  font-weight: 500;
+}
+.water-page .story-break {
+  margin: 80px calc(50% - 50vw);
+  padding: 95px 25px;
+  text-align: center;
+  background: #e9dfcf;
+  color: #294950;
+}
+.water-page .story-break-content {
+  max-width: 850px;
+  margin: auto;
+  font: 400 clamp(30px,4.5vw,48px)/1.3 "Cormorant Garamond",serif;
+}
+.water-page .blue-hole {
+  margin: 70px 0;
+  padding: 65px 20px;
+  background: #e7efea;
+  text-align: center;
+}
+.water-page .blue-hole-art {
+  margin: auto;
+}
+.water-page .mystery-card {
+  background: #e9dfcf;
+  padding: 35px;
+  color: #294950;
+}
+.water-page .caribbean-section {
+  padding: 100px 28px;
+  background: #e7efea;
+}
+.water-page .caribbean-inner {
+  max-width: 920px;
+  margin: auto;
+}
+.water-page .return-highlight {
+  margin: 45px 0;
+  padding: 35px;
+  border-left: 2px solid var(--gold,#b69a69);
+  background: #f0eadf;
+  font: 400 clamp(25px,3vw,36px)/1.4 "Cormorant Garamond",serif;
+  color: #294950;
+}
+.water-page .story-end {
+  padding: 100px 25px;
+  text-align: center;
+  background: #e9dfcf;
+}
+.water-page .story-end a {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 14px 25px;
+  background: var(--sea-dark,#3e7477);
+  color: white;
+  text-decoration: none;
+  font-size: 10px;
+  letter-spacing: .15em;
+}
+.water-page .story-footer {
+  padding: 30px 20px;
+  text-align: center;
+  color: var(--sea-dark,#3e7477);
+  font-size: 10px;
+  letter-spacing: .14em;
+}
+.water-page .story-footer a {
+  color: var(--sea-dark,#3e7477);
+  text-decoration: none;
+}
+@media(max-width:700px) {
+  .water-page .story-hero { min-height: 590px; }
+  .water-page .story-hero-content { padding: 140px 7vw 75px; }
+  .water-page .story-content { padding: 65px 23px; }
+  .water-page .story-section { margin-bottom: 70px; }
+  .water-page .story-break { margin-top: 55px; margin-bottom: 55px; }
+  .water-page .mystery-card { padding: 24px; }
+}
+</style>
+</head>
+
+<body class="water-page">
+
+<div class="noise"></div>
+
+<!-- =======================================================
+     NAVIGATION
+======================================================== -->
+
+<header class="story-hero">
+
+  <div class="story-nav">
+
+    <div class="brand">
+      AQUA <span style="color:var(--gold)">·</span> BLINKITA
+    </div>
+
+    <a href="index.html?lang=sl">
+      ← <span class="back-text">NAZAJ V OCEANSKI PORTAL</span>
+    </a>
+
+  </div>
+
+  <div class="story-hero-water"></div>
+
+  <div class="story-hero-content">
+
+    <p class="eyebrow">
+      ZGODBA O VODI
+    </p>
+
+    <h1>
+      STARI NAČIN<br>POGOVORA Z <em>VODO.</em>
+    </h1>
+
+    <p class="story-hero-sub">
+      Before there were messages, there were shores.
+      Before there were screens, there was the horizon.
+    </p>
+
+  </div>
+
+</header>
+
+
+<!-- =======================================================
+     STORY
+======================================================== -->
+
+<main class="story-content">
+
+
+  <!-- OLD WAY -->
+
+  <section class="story-section">
+
+    <p class="story-kicker">
+      PRED ZASLONI
+    </p>
+
+    <h2>
+      Preden so obstajala
+      <em>sporočila.</em>
+    </h2>
+
+    <div class="story-text">
+
+      <p>
+        Preden so obstajala sporočila, so obstajale obale.
+      </p>
+
+      <p>
+        Preden so obstajali zasloni, je bilo obzorje.
+      </p>
+
+      <p>
+        Ljudje so prihajali k vodi s stvarmi, ki jih niso mogli nositi sami.
+      </p>
+
+      <p>
+        Želja.
+      </p>
+
+      <p>
+        Molitev.
+      </p>
+
+      <p>
+        Ime.
+      </p>
+
+      <p>
+        Slovo.
+      </p>
+
+      <p>
+        Upanje za nekoga, ki so ga imeli radi.
+      </p>
+
+      <p>
+        Šepetali so valovom in opazovali, kako voda odnaša njihove besede.
+      </p>
+
+      <p>
+        Verjeli so, da jih morje sliši.
+      </p>
+
+      <p>
+        Včasih so preprosto potrebovali nekaj tako prostranega, da bi sprejelo tisto, česar sami niso mogli več nositi.
+      </p>
+
+      <p>
+        Voda je postala prostor, kjer so lahko odložili svoje breme.
+      </p>
+
+      <p>
+        Za prošnjo.
+      </p>
+
+      <p>
+        Za spomin.
+      </p>
+
+      <p>
+        Za nov začetek.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- BREAK -->
+
+  <div class="story-break">
+
+    <div class="story-break-content">
+
+      <p>
+        Morda starodavni obred nikoli ni bil izgubljen.
+        <br><br>
+        <em>
+          Morda smo le pozabili, da ga še vedno živimo.
+        </em>
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <!-- MODERN WATER -->
+
+  <section class="story-section">
+
+    <p class="story-kicker">
+      ŠE VEDNO TO POČNEMO
+    </p>
+
+    <h2>
+      We speak to the water
+      <em>without realizing it.</em>
+    </h2>
+
+    <div class="story-text">
+
+      <p>
+        In morda to še vedno počnemo.
+      </p>
+
+      <p>
+        Ne da bi se tega sploh zavedali.
+      </p>
+
+      <p>
+        Sedimo ob morju.
+      </p>
+
+      <p>
+        Zremo v obzorje.
+      </p>
+
+      <p>
+        Umirimo se.
+      </p>
+
+      <p>
+        Pomislimo na nekoga.
+      </p>
+
+      <p>
+        Za nekaj prosimo.
+      </p>
+
+      <p>
+        Nekaj izpustimo.
+      </p>
+
+      <p>
+        Izrečemo željo.
+      </p>
+
+      <p class="large">
+        Govorimo z vodo.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- OLDER THAN MEMORY -->
+
+  <section class="story-section">
+
+    <p class="story-kicker">
+      NEKATERE VODE SO STAREJŠE OD SPOMINA
+    </p>
+
+    <h2>
+      Karibi
+      <em>se spominjajo.</em>
+    </h2>
+
+    <div class="story-text">
+
+      <p>
+        V Karibih je nekaj, kar je težko opisati.
+      </p>
+
+      <p>
+        Morda je to barva.
+      </p>
+
+      <p>
+        Morda koralni greben.
+      </p>
+
+      <p>
+        Morda tisto, kar se skriva pod gladino.
+      </p>
+
+      <p>
+        Tukaj v Belizeju morje ni zgolj morje.
+      </p>
+
+      <p>
+        Polno je prehodov.
+      </p>
+
+      <p>
+        Jame.
+      </p>
+
+      <p>
+        Modre luknje.
+      </p>
+
+      <p>
+        Skriti prehodi.
+      </p>
+
+      <p>
+        Kraji, kjer se svet na površju nenadoma odpre v drug svet pod njim.
+      </p>
+
+      <p>
+        Starodavni Maji so nekatere vode razumeli kot svete kraje — pragove med vidnim svetom in svetovi onkraj vidnega.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- BLUE HOLE -->
+
+  <div class="blue-hole">
+
+    <div
+      class="blue-hole-art"
+      aria-label="Abstract representation of the Great Blue Hole"
+    ></div>
+
+  </div>
+
+
+  <!-- GREAT BLUE HOLE -->
+
+  <section class="story-section">
+
+    <p class="story-kicker">
+      VELIKA MODRA LUKNJA
+    </p>
+
+    <h2>
+      Odprtina
+      <em>v neznano.</em>
+    </h2>
+
+    <div class="story-text">
+
+      <p>
+        Belize še vedno skriva eno najbolj izjemnih odprtin na Zemlji.
+      </p>
+
+      <p>
+        Velika modra luknja.
+      </p>
+
+      <p>
+        Od zgoraj je videti skoraj neverjetna:
+      </p>
+
+      <p>
+        Popoln krog globoke indigo modrine, obdan s turkiznim grebenom.
+      </p>
+
+      <p>
+        Temna odprtina sredi neskončnega modrega morja.
+      </p>
+
+      <p>
+        Generacije ljudi so zrle v njene globine in se spraševale, kaj se skriva spodaj.
+      </p>
+
+      <p>
+        Stare zgodbe so pripovedovale, da je brez dna.
+      </p>
+
+      <p>
+        Raziskovalci so se nazadnje spustili vanjo.
+      </p>
+
+      <p>
+        Globoko pod gladino so našli orjaške starodavne stalaktite — tihe priče sveta, ki je obstajal, še preden ga je prekrilo morje.
+      </p>
+
+      <p>
+        In vendar, ko od zgoraj zreš v ta modri krog,
+      </p>
+
+      <p>
+        ostaja nekaj, česar meritve ne morejo pojasniti.
+      </p>
+
+      <p>
+        Nekaj v občutku.
+      </p>
+
+      <p>
+        Nekaj v tišini.
+      </p>
+
+      <p>
+        Nekaj v vprašanju, ki ga pusti za seboj.
+      </p>
+
+      <p class="large">
+        Kaj je še tam spodaj?
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- MYSTERY -->
+
+  <section class="story-section mystery">
+
+    <p class="story-kicker">
+      ZGODBE KORALNEGA GREBENA
+    </p>
+
+    <h2>
+      In potem so tu še
+      <em>zgodbe.</em>
+    </h2>
+
+    <div class="story-text">
+
+      <p>
+        Zgodbe ribičev.
+      </p>
+
+      <p>
+        Zgodbe, ki se tiho prenašajo od človeka do človeka.
+      </p>
+
+    </div>
+
+    <div class="mystery-card">
+
+      <p>
+        Luči, ki se pojavijo tam, kjer jih ne bi smelo biti.
+      </p>
+
+      <p>
+        Obrisi pod gladino.
+      </p>
+
+      <p>
+        Nenavadne prikazni nad grebenom.
+      </p>
+
+      <p>
+        Nekaj, kar vstopa v vodo.
+      </p>
+
+      <p>
+        In nekaj, kar iz nje izstopa.
+      </p>
+
+      <p>
+        Zgodbe o krajih, kjer se zdi, da se morje vede drugače.
+      </p>
+
+    </div>
+
+    <div class="story-text" style="margin-top:45px;">
+
+      <p>
+        Nekateri se smejijo.
+      </p>
+
+      <p>
+        Nekateri verjamejo.
+      </p>
+
+      <p>
+        Nekateri preprosto rečejo:
+      </p>
+
+      <p class="large">
+        »Videla sem, kar sem videla.«
+      </p>
+
+      <p>
+        Ni mi treba odločati namesto tebe, kaj je res.
+      </p>
+
+      <p>
+        Všeč mi je skrivnost.
+      </p>
+
+      <p>
+        Kajti na Karibih je bilo vedno dovolj prostora za skrivnost.
+      </p>
+
+      <p>
+        To ni le morje, v katerem lahko plavaš.
+      </p>
+
+      <p>
+        To je morje zgodb.
+      </p>
+
+      <p>
+        Morje s spominom.
+      </p>
+
+      <p>
+        Morje z globinami, ki smo jih že izmerili — in takšnimi, ki jih še nismo.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- CARIBBEAN -->
+
+  <section class="caribbean-section">
+
+    <div class="caribbean-inner">
+
+      <p class="story-kicker">
+        ZAKAJ KARIBI?
+      </p>
+
+      <h2>
+        Because some places
+        become part of you.
+      </h2>
+
+      <div class="story-text">
+
+        <p>
+          In nekatere vode ostanejo s teboj še dolgo po tem, ko jih zapustiš.
+        </p>
+
+        <p>
+          Moj odnos z oceanom se je začel že v otroštvu.
+        </p>
+
+        <p>
+          Še preden sem znala ubesediti svoje občutke, sem vedela, da je v morju nekaj, ob čemer sem se morala umiriti.
+        </p>
+
+        <p>
+          Leta pozneje sem tri leta živela tik ob plaži v Hopkinsu v Belizeju.
+        </p>
+
+        <p>
+          Tam se je najin odnos poglobil.
+        </p>
+
+        <p>
+          Ocean ni bil več kraj, kamor sem prihajala.
+        </p>
+
+        <p>
+          Preprosto je bila tam.
+        </p>
+
+        <p>
+          Vsak dan.
+        </p>
+
+        <p>
+          Z bibanjem plime in oseke.
+        </p>
+
+        <p>
+          Z vetrom.
+        </p>
+
+        <p>
+          Z grebenom.
+        </p>
+
+        <p>
+          S spreminjajočo se svetlobo.
+        </p>
+
+        <p>
+          Z neskončno modrino.
+        </p>
+
+        <p>
+          Začela sem jo doživljati kot
+          <strong>Babica Ocean.</strong>
+        </p>
+
+        <p>
+          Ne zato, ker bi verjela, da lahko govorim v njenem imenu.
+        </p>
+
+        <p>
+          Temveč zato, ker je nekaterim prisotnostim lažje prisluhniti, ko jih nehamo poskušati razložiti.
+        </p>
+
+        <p>
+          In morda sem prav zato postala
+          <strong>Šepetalka Oceanu.</strong>
+        </p>
+
+        <p>
+          Naučila sem se sedeti ob njej.
+        </p>
+
+        <p>
+          Poslušati.
+        </p>
+
+        <p>
+          Zaznavati, kaj pride v tišini.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- RETURN -->
+
+  <section class="story-section return-section">
+
+    <p class="story-kicker">
+      VRNITEV NA OBALO
+    </p>
+
+    <h2>
+      Vračam se
+      <em>k odnosu.</em>
+    </h2>
+
+    <div class="story-text">
+
+      <p>
+        Zdaj imam blagoslov, da se vračam v Hopkins.
+      </p>
+
+      <p>
+        Vračam se na karibsko obalo.
+      </p>
+
+      <p>
+        Vračam se v dom, oddaljen le približno petdeset metrov od morja.
+      </p>
+
+      <p>
+        Nazaj v neposredno bližino te prostrane, starodavne zavesti, ki ji pravim
+        <strong>Babica Ocean.</strong>
+      </p>
+
+    </div>
+
+    <div class="return-highlight">
+
+      <p>
+        This time, I am not simply returning to the ocean.
+        <br>
+        <strong>I am returning to the relationship.</strong>
+      </p>
+
+    </div>
+
+    <div class="story-text">
+
+      <p>
+        S te obale lahko nekaj ponesem tudi zate.
+      </p>
+
+      <p>
+        Tvoje ime.
+      </p>
+
+      <p>
+        Tvoja namera.
+      </p>
+
+      <p>
+        Tvoje vprašanje.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- END -->
+
+  <section class="story-end">
+
+    <h2>
+      Voda ne pozna meja.
+    </h2>
+
+    <p>
+      Ni ti treba odpotovati na Karibe. Lahko se usedeš, kjer koli si, in se spomniš starega načina pogovora z vodo.
+    </p>
+
+    <a
+      class="button"
+      href="index.html?lang=sl#portals"
+    >
+      IZBERI SVOJ OCEANSKI PORTAL
+    </a>
+
+  </section>
+
+
+</main>
+
+
+<footer class="story-footer">
+
+  AQUA · BLINKITA · CARIBBEAN OCEAN PORTAL™
+
+  <br>
+
+  <span>© 2026</span>
+
+  <br><br>
+
+  <a href="index.html?lang=sl">
+    VRNI SE V OCEANSKI PORTAL
+  </a>
+
+</footer>
+
+
+</body>
+</html>
+
+

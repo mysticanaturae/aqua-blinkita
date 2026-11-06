@@ -1,0 +1,1045 @@
+﻿<!doctype html>
+
+<html lang="sl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Aqua Lemu Reiki™ – AQUA · BLINKITA</title>
+
+<meta name="description" content="Aqua Lemu Reiki™ – energijski tok vode, spomina in podpore skozi Karibski oceanski portal.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="home.css">
+
+<style>
+.lemu-page {
+  background: var(--cream, #f7f5ee);
+  color: var(--ink, #24434a);
+  font-family: "DM Sans", sans-serif;
+}
+.lemu-page .lemu-nav {
+  position: absolute; z-index: 10; top: 0; left: 0; right: 0;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 26px 6vw; color: #fff; font-size: 10px;
+  letter-spacing: .16em; text-transform: uppercase;
+}
+.lemu-page .lemu-nav a { color: inherit; text-decoration: none; }
+.lemu-page .lemu-nav .brand { font-weight: 600; }
+.lemu-page .lemu-nav .brand span { color: #d8c39b; }
+.lemu-page .lemu-hero {
+  min-height: 78vh; position: relative; overflow: hidden;
+  display: flex; align-items: center;
+  padding: 130px 8vw 90px;
+  color: #fff;
+  background:
+    linear-gradient(90deg, rgba(15,48,53,.68), rgba(15,48,53,.12)),
+    url("images/flyers/babica-ocean-flyer-blank-transparent.jpg") center 48% / cover no-repeat;
+}
+.lemu-page .lemu-hero-inner { position: relative; z-index: 1; max-width: 780px; }
+.lemu-page .eyebrow {
+  font-size: 10px; letter-spacing: .22em; text-transform: uppercase;
+  color: #d8c39b;
+}
+.lemu-page .lemu-hero h1 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(3.2rem, 7vw, 6.5rem);
+  font-weight: 400; line-height: .98; margin: 24px 0;
+}
+.lemu-page .lemu-hero h1 em { color: #e7d9bd; font-style: italic; }
+.lemu-page .lemu-hero-sub { max-width: 520px; line-height: 1.8; font-size: 15px; }
+.lemu-page .lemu-symbol { display: none; }
+.lemu-page main { overflow: hidden; }
+.lemu-page .lemu-story,
+.lemu-page .stars-water-content {
+  max-width: 850px; margin: 0 auto; padding: 90px 28px;
+}
+.lemu-page .lemu-story h2,
+.lemu-page .stars-water h2,
+.lemu-page .mantra h2,
+.lemu-page .lemu-final h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.3rem, 4.5vw, 4rem);
+  line-height: 1.08; font-weight: 400; color: var(--ink, #24434a);
+}
+.lemu-page p { font-size: 15px; line-height: 1.95; color: #53696a; }
+.lemu-page p.lead { font-size: 19px; color: var(--ink, #24434a); }
+.lemu-page p.large { font-family: "Cormorant Garamond", serif; font-size: 27px; color: var(--sea-dark, #3e7477); }
+.lemu-page .lemu-story h3 {
+  font-family: "Cormorant Garamond", serif; font-size: 27px;
+  font-weight: 500; color: var(--sea-dark, #3e7477);
+}
+.lemu-page .lemuria,
+.lemu-page .receive,
+.lemu-page .questions { background: var(--cream, #f7f5ee); }
+.lemu-page .worlds,
+.lemu-page .reiki-current { background: #edf1eb; }
+.lemu-page .story-dark {
+  background: #24434a; color: #f7f5ee;
+}
+.lemu-page .story-dark p,
+.lemu-page .story-dark h2 { color: #f7f5ee; }
+.lemu-page .stars-water {
+  background: linear-gradient(145deg, #dce9e4, #f3eee2);
+  text-align: center; padding: 70px 24px;
+}
+.lemu-page .mantra {
+  background: #e9dfcf; text-align: center; padding: 75px 24px;
+}
+.lemu-page .mantra-inner { max-width: 650px; margin: auto; }
+.lemu-page .mantra-line {
+  font-family: "Cormorant Garamond", serif; font-size: 25px;
+  line-height: 1.6; color: var(--ink, #24434a);
+}
+.lemu-page .mantra-final { color: var(--sea-dark, #3e7477); }
+.lemu-page .receive-list { max-width: 700px; margin: 35px auto 0; }
+.lemu-page .receive-step { padding: 20px 0; border-bottom: 1px solid #d9d4c8; }
+.lemu-page .receive-number { color: var(--gold, #b69a69); }
+.lemu-page .lemu-divider { width: 70px; height: 1px; background: var(--gold, #b69a69); margin: 35px 0; }
+.lemu-page .lemu-final {
+  background: #e5ece6; padding: 65px 20px; text-align: center;
+}
+.lemu-page .lemu-final .lemu-story { padding: 45px 20px; }
+.lemu-page .final-link,
+.lemu-page .back-link {
+  display: inline-block; margin: 20px 12px 0; color: var(--sea-dark, #3e7477);
+  text-decoration: none; font-size: 11px; letter-spacing: .14em;
+}
+.lemu-page footer {
+  padding: 28px 20px; text-align: center; background: #24434a;
+  color: #f7f5ee; font-size: 10px; letter-spacing: .12em;
+}
+@media (max-width: 700px) {
+  .lemu-page .lemu-nav { padding: 20px 5vw; font-size: 8px; }
+  .lemu-page .lemu-hero { min-height: 72vh; padding: 120px 7vw 70px; background-position: 58% center; }
+  .lemu-page .lemu-story,
+  .lemu-page .stars-water-content { padding: 65px 24px; }
+}
+</style>
+
+</head>
+
+<body class="lemu-page">
+
+<div class="noise"></div>
+
+<!-- =========================================================
+     NAV
+========================================================= -->
+
+<nav class="lemu-nav">
+
+  <div class="brand">
+    AQUA <span>·</span> BLINKITA
+  </div>
+
+  <div>
+    <a href="index.html?lang=sl#portals">
+      VSTOPI V OCEANSKI PORTAL
+    </a>
+  </div>
+
+</nav>
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<header class="lemu-hero">
+
+  <div class="lemu-hero-inner">
+
+<p class="eyebrow">
+  AQUA LEMU REIKI™
+</p>
+
+<h1>
+  PREDEN JE OCEAN<br>
+  <em>IMEL IME.</em>
+</h1>
+
+<p class="lemu-hero-sub">
+  Tok vode, spomina in energijske podpore
+  ki potuje skozi Karibski oceanski portal.
+</p>
+
+  </div>
+
+  <div class="lemu-symbol">
+    ≈
+  </div>
+
+</header>
+
+<main>
+
+<!-- =========================================================
+     LEMURIA
+========================================================= -->
+
+<section class="lemu-story lemuria">
+
+  <p class="eyebrow">
+    PREDEN JE OCEAN IMEL IME
+  </p>
+
+  <h2>
+    Obstajajo zgodbe, ki segajo
+    dlje v preteklost kot zapisana zgodovina.
+  </h2>
+
+  <p>
+    Zgodbe o deželah, ki so izginile.
+  </p>
+
+  <p>
+    O civilizacijah, ki so ostale ohranjene le v drobcih,
+    mitih in šepetih.
+  </p>
+
+  <p>
+    One of those stories speaks of <strong>Lemuria</strong> —
+    izgubljenem svetu, ki naj bi obstajal v davni dobi,
+    preden so se vode spremenile in je kopno izginilo
+    pod morsko gladino.
+  </p>
+
+  <p>
+    Ali je Lemurija kdaj zares obstajala kot fizična civilizacija
+    takšna, kot jo opisujejo sodobne duhovne tradicije,
+    ali pa pripada simbolnemu spominu
+    človeštva, vam ne morem povedati.
+  </p>
+
+  <p class="large">
+    Vem pa, zakaj je ta zgodba ostala z menoj.
+  </p>
+
+  <p>
+    Kajti v oceanu je nekaj,
+    zaradi česar se sprašujemo, česa se spominja.
+  </p>
+
+  <p>
+    Kaj leži pod gladino.
+  </p>
+
+  <p>
+    Kaj je bilo tukaj pred nami.
+  </p>
+
+  <p>
+    Kaj morda še vedno obstaja v oblikah, ki jih ne moremo videti.
+  </p>
+
+</section>
+
+<!-- =========================================================
+     AQUA LEMU
+========================================================= -->
+
+<section class="lemu-story">
+
+  <p class="eyebrow">
+    IME
+  </p>
+
+  <h2>
+    In tukaj se je začela
+    zgodba Aqua Lemu Reiki.
+  </h2>
+
+  <p>
+    Ne kot nekaj ločenega od Oceanskega portala.
+  </p>
+
+  <p>
+    Temveč kot dodatna plast odnosa
+    med vodo, namero in zavestjo.
+  </p>
+
+  <div class="elements">
+
+<div class="element">
+
+  <div class="element-symbol">
+    ≈
+  </div>
+
+  <h3>
+    AQUA
+  </h3>
+
+  <p>
+    Živi element vode.
+    Morje.
+    Starodavni spomin voda.
+  </p>
+
+</div>
+
+
+<div class="element">
+
+  <div class="element-symbol">
+    ✧
+  </div>
+
+  <h3>
+    LEMU
+  </h3>
+
+  <p>
+    Spomin na Lemurijo –
+    na zavest, ki jo duhovne tradicije
+    povezujejo z vodo,
+    resonanco, zdravljenjem in subtilno komunikacijo.
+  </p>
+
+</div>
+
+
+<div class="element">
+
+  <div class="element-symbol">
+    ✦
+  </div>
+
+  <h3>
+    REIKI
+  </h3>
+
+  <p>
+    Univerzalna življenjska energija, ki jo lahko
+    na daljavo ponudimo kot obliko
+    energijske podpore.
+  </p>
+
+</div>
+
+  </div>
+
+  <p class="large">
+    Aqua Lemu Reiki ni zgolj
+    nekaj, kar je dodano Oceanskemu portalu.
+  </p>
+
+  <p>
+    <strong>
+      Je del samega portala.
+    </strong>
+  </p>
+
+</section>
+
+<!-- =========================================================
+     WATER BETWEEN WORLDS
+========================================================= -->
+
+<section class="lemu-story worlds">
+
+  <p class="eyebrow">
+    VODA MED SVETOVI
+  </p>
+
+  <h2>
+    Morda prav zato
+    doživljam ocean drugače.
+  </h2>
+
+  <p>
+    Ko sem se prvič preselila v bližino karibske obale,
+    se je v meni začelo nekaj prebujati.
+  </p>
+
+  <p>
+    Ne zato, ker bi to iskala.
+  </p>
+
+  <p>
+    Nisem.
+  </p>
+
+  <p>
+    Preprosto sem živela ob vodi.
+  </p>
+
+  <p>
+    Opazovala sem jo.
+  </p>
+
+  <p>
+    Hodila ob njej.
+  </p>
+
+  <p>
+    Poslušala sem jo.
+  </p>
+
+  <p>
+    In počasi se je nekaj odprlo.
+  </p>
+
+  <div class="quote">
+
+<p>
+  Občutek, da je zavest veliko širša
+  od vidnega sveta.
+</p>
+
+  </div>
+
+  <p>
+    Nekateri vtisi so bili globoko zemeljski.
+  </p>
+
+  <p>
+    Telo.
+  </p>
+
+  <p>
+    Zemlja.
+  </p>
+
+  <p>
+    Predniki.
+  </p>
+
+  <p>
+    Plimovanje.
+  </p>
+
+  <p>
+    Živi svet okoli mene.
+  </p>
+
+  <p>
+    Drugi pa so bili drugačni.
+  </p>
+
+  <p>
+    Bolj oddaljeni.
+  </p>
+
+  <p>
+    Prostornejši.
+  </p>
+
+  <p>
+    Skoraj tako, kot da bi pripadali polju
+    zavesti onkraj Zemlje.
+  </p>
+
+  <p>
+    To sem začela opisovati kot
+    <strong>plejadsko zavest.</strong>
+  </p>
+
+  <p class="small">
+    Ne kot nekaj, kar bi lahko znanstveno dokazala,
+    temveč kot nekaj, kar sem resnično doživela.
+  </p>
+
+  <p>
+    Ocean je postal eden od krajev,
+    kjer je to poslušanje postalo najmočnejše.
+  </p>
+
+</section>
+
+<!-- =========================================================
+     STARS ABOVE / WATER BELOW
+========================================================= -->
+
+<section class="stars-water">
+
+  <div class="stars-water-content">
+
+<p class="eyebrow">
+  ZGoraj · SPODAJ
+</p>
+
+<h2>
+  ZGoraj:<br>
+  ZVEZDE.
+  <br><br>
+  SPODAJ:<br>
+  VODA.
+</h2>
+
+<p>
+  Med njima stojimo –
+  in poslušamo.
+</p>
+
+  </div>
+
+</section>
+
+<!-- =========================================================
+     MAYA / COSMIC CONNECTION
+========================================================= -->
+
+<section class="lemu-story story-dark">
+
+  <p class="eyebrow">
+    NEBO NIKOLI NI BILO LOČENO
+  </p>
+
+  <h2>
+    Starodavni Maji so z izjemno pozornostjo
+    opazovali nebo.
+  </h2>
+
+  <p>
+    Zanje nebo ni bilo ločeno od življenja na Zemlji.
+  </p>
+
+  <p>
+    Gibanje nebesnega sveta je bilo del
+    širšega živega reda.
+  </p>
+
+  <p>
+    Karibi skrivajo še drugačno skrivnost.
+  </p>
+
+  <p>
+    Morje odseva zvezde.
+  </p>
+
+  <p>
+    Zvezde poniknejo za obzorjem.
+  </p>
+
+  <p>
+    Greben se nadaljuje pod gladino.
+  </p>
+
+  <p>
+    Modre globeli se spuščajo v temo.
+  </p>
+
+  <p>
+    Pod zemljo se odpirajo jame.
+  </p>
+
+  <p>
+    Voda potuje med tem, kar lahko vidimo,
+    in tem, česar ne moremo.
+  </p>
+
+  <p class="large">
+    Morda je prav zato
+    ocean postal tako močan
+    simbol komunikacije med svetovi.
+  </p>
+
+  <p>
+    Ne zato, ker bi morali natančno določiti,
+    kaj leži onkraj.
+  </p>
+
+  <p>
+    Temveč zato, ker nas srečanje z nečim tako prostranim
+    spremeni v načinu poslušanja.
+  </p>
+
+  <p>
+    <strong>
+      Ocean utiša hrup.
+    </strong>
+  </p>
+
+  <p>
+    In včasih, ko hrup dovolj potihne,
+    lahko zaslišimo nekaj drugega.
+  </p>
+
+</section>
+
+<!-- =========================================================
+     AQUA LEMU REIKI CURRENT
+========================================================= -->
+
+<section class="lemu-story reiki-current">
+
+  <p class="eyebrow">
+    TOK AQUA LEMU REIKI
+  </p>
+
+  <h2>
+    To je energijska plast,
+    ki jo prinašam v Oceanski portal.
+  </h2>
+
+  <p>
+    Medtem ko sem fizično ob Karibskem morju,
+    I offer <strong>Aqua Lemu Reiki</strong>
+    kot energijsko podporo na daljavo za tvojo izbrano namero.
+  </p>
+
+  <div class="current-box">
+
+<p>
+  Ni ti treba biti na spletu.
+</p>
+
+<p>
+  Ni ti treba biti budna prav v tistem trenutku.
+</p>
+
+<p>
+  Ni ti treba ničesar izvajati.
+</p>
+
+<p>
+  Prenos lahko preprosto sprejmeš.
+</p>
+
+  </div>
+
+  <p>
+    Če pa želiš sodelovati zavestno,
+    si lahko pozneje ustvariš svoj trenutek.
+  </p>
+
+  <p>
+    Poišči miren prostor.
+  </p>
+
+  <p>
+    Stopala položi na tla
+    ali se udobno namesti.
+  </p>
+
+  <p>
+    Zapri oči.
+  </p>
+
+  <p>
+    Počasi dihaj.
+  </p>
+
+  <p>
+    Izgovori svojo mantro Oceanskega portala.
+  </p>
+
+  <p>
+    In si predstavljaj vodo.
+  </p>
+
+  <p>
+    Ne kot nekaj, kar moraš nadzorovati.
+  </p>
+
+  <p class="large">
+    Temveč kot nekaj, čemur lahko prisluhneš.
+  </p>
+
+</section>
+
+<!-- =========================================================
+     MANTRA
+========================================================= -->
+
+<section class="mantra">
+
+  <div class="mantra-inner">
+
+<p class="eyebrow">
+  TVOJA MANTRA PORTALA
+</p>
+
+<h2>
+  Izgovori jo tiho.
+</h2>
+
+<p class="mantra-line">
+  Moje ime vstopa v vodo.
+</p>
+
+<p class="mantra-line">
+  Moja namera vstopa v tok.
+</p>
+
+<p class="mantra-line">
+  Spuščam tisto, kar sem pripravljena spustiti.
+</p>
+
+<p class="mantra-line">
+  Sprejemam tisto, kar sem pripravljena sprejeti.
+</p>
+
+<p class="mantra-line">
+  Naj voda ponese mojo namero.
+</p>
+
+<p class="mantra-line">
+  Naj svetloba vodi tisto, kar se vrača.
+</p>
+
+<p class="mantra-line mantra-final">
+  Poslušam.
+</p>
+
+  </div>
+
+</section>
+
+<!-- =========================================================
+     RECEIVING
+========================================================= -->
+
+<section class="lemu-story receive">
+
+  <p class="eyebrow">
+    ČE SE ODLOČIŠ SODELOVATI
+  </p>
+
+  <h2>
+    Ni ti treba
+    ničesar povzročiti.
+  </h2>
+
+  <p>
+    Prenos Aqua Lemu Reiki ne zahteva
+    dejavnega sodelovanja.
+  </p>
+
+  <p>
+    Preprosto si lahko dovoliš sprejemati.
+  </p>
+
+  <div class="receive-list">
+
+<div class="receive-step">
+
+  <div class="receive-number">
+    01
+  </div>
+
+  <div>
+    <h3>
+      UMIRI SE
+    </h3>
+
+    <p>
+      Poišči miren prostor in se udobno namesti.
+    </p>
+  </div>
+
+</div>
+
+
+<div class="receive-step">
+
+  <div class="receive-number">
+    02
+  </div>
+
+  <div>
+    <h3>
+      DIHAJ
+    </h3>
+
+    <p>
+      Zapri oči in nekajkrat počasi,
+      naravno vdihni in izdihni.
+    </p>
+  </div>
+
+</div>
+
+
+<div class="receive-step">
+
+  <div class="receive-number">
+    03
+  </div>
+
+  <div>
+    <h3>
+      IZGOVORI
+    </h3>
+
+    <p>
+      Izgovori mantro Oceanskega portala,
+      tiho ali v sebi.
+    </p>
+  </div>
+
+</div>
+
+
+<div class="receive-step">
+
+  <div class="receive-number">
+    04
+  </div>
+
+  <div>
+    <h3>
+      SPREJMI
+    </h3>
+
+    <p>
+      Nato samo poslušaj.
+      Ničesar drugega ti ni treba storiti.
+    </p>
+  </div>
+
+</div>
+
+  </div>
+
+</section>
+
+<!-- =========================================================
+     SHARING
+========================================================= -->
+
+<section class="lemu-story questions">
+
+  <p class="eyebrow">
+    IN NATO DELIVA
+  </p>
+
+  <h2>
+    Opazuj, kaj se dogaja.
+  </h2>
+
+  <p>
+    Med prenosom.
+  </p>
+
+  <p>
+    Takoj po njem.
+  </p>
+
+  <p>
+    Ali celo nekaj ur pozneje.
+  </p>
+
+  <p>
+    Morda nekaj začutiš.
+  </p>
+
+  <p>
+    Morda zagledaš podobo.
+  </p>
+
+  <p>
+    Morda privre na površje spomin.
+  </p>
+
+  <p>
+    Morda se spomniš določene osebe.
+  </p>
+
+  <p>
+    Morda začutiš mir.
+  </p>
+
+  <p>
+    Morda se na videz ne zgodi prav nič.
+  </p>
+
+  <div class="quote">
+
+<p>
+  Ni pravilne ali napačne izkušnje.
+</p>
+
+<p>
+  Včasih pa najzanimivejše stvari
+  pridejo pozneje.
+</p>
+
+  </div>
+
+  <p>
+    Zato te vabim, da mi poveš,
+    kaj si doživela.
+  </p>
+
+  <p>
+    Tvoja izkušnja postane še en del
+    Oceanskega portala.
+  </p>
+
+</section>
+
+<!-- =========================================================
+     QUESTIONS
+========================================================= -->
+
+<section class="lemu-story">
+
+  <p class="eyebrow">
+    VPRAŠANJE ODPIRA VRATA
+  </p>
+
+  <h2>
+    Pomembno je tudi tvoje vprašanje.
+  </h2>
+
+  <p>
+    Vprašanje, na katero lahko odgovorimo
+    <strong>z da ali ne,</strong>
+    pušča zelo malo prostora za razmislek.
+  </p>
+
+  <p>
+    Globoko vprašanje odpira širša vrata.
+  </p>
+
+  <div class="lemu-divider"></div>
+
+  <p>
+    Namesto:
+  </p>
+
+  <p>
+    <strong>
+      »Ali bom našla ljubezen?«
+    </strong>
+  </p>
+
+  <p>
+    poskusi:
+  </p>
+
+  <p class="large">
+    »Kaj sem pripravljena razumeti
+    o ljubezni, ki jo vabim v svoje življenje?«
+  </p>
+
+  <div class="lemu-divider"></div>
+
+  <p>
+    Namesto:
+  </p>
+
+  <p>
+    <strong>
+      »Se bo vse dobro izteklo?«
+    </strong>
+  </p>
+
+  <p>
+    poskusi:
+  </p>
+
+  <p class="large">
+    »Kaj se želi spremeniti, da bi
+    lahko šla naprej z več jasnosti?«
+  </p>
+
+  <div class="lemu-divider"></div>
+
+  <p>
+    Oceana ne prosiš,
+    naj napove tvojo prihodnost.
+  </p>
+
+  <p>
+    Daješ si prostor, da prisluhneš.
+  </p>
+
+  <p class="large">
+    Vprašanje odpira portal.
+  </p>
+
+  <p>
+    Voda drži prostor.
+  </p>
+
+  <p>
+    Tok Reikija podpira potovanje.
+  </p>
+
+  <p>
+    Jaz pa se vračam na obalo, da prisluhnem
+    temu, kar prihaja skozi.
+  </p>
+
+</section>
+
+<!-- =========================================================
+     FINAL
+========================================================= -->
+
+<section class="lemu-final">
+
+  <div class="lemu-story">
+
+
+<p class="eyebrow">
+  OD ENE OBALE DO DRUGE
+</p>
+
+<h2>
+  Ti ostaneš tam, kjer si.<br>
+  Jaz odidem na Karibe.
+</h2>
+
+<p class="lead">
+  S seboj ponesem tvoje ime.<br>
+  Tvojo namero.<br>
+  Tvoje vprašanje.<br>
+  In tok Aqua Lemu Reiki.
+</p>
+
+<p>
+  K vodi, ki sem jo spoznala.
+</p>
+
+<p>
+  Na obalo, h kateri se vračam.
+</p>
+
+<p>
+  Na kraj, kjer se ocean,
+  nebo in obzorje srečajo.
+</p>
+
+<p class="large">
+  Ni ti treba travel to the Caribbean.
+</p>
+
+<p class="large">
+  Tvoje ime pa lahko.
+</p>
+
+<a class="final-link" href="index.html?lang=sl#portals">
+  IZBERI SVOJ OCEANSKI PORTAL →
+</a>
+
+<br>
+
+<a class="back-link" href="index.html">
+  ← NAZAJ NA AQUA · BLINKITA
+</a>
+
+
+  </div>
+
+</section>
+
+</main>
+
+<footer>
+  AQUA · BLINKITA · KARIBSKI OCEANSKI PORTAL™
+  <br>
+  <span>© 2026</span>
+</footer>
+
+</body>
+</html>
+
+
+

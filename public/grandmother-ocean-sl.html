@@ -1,0 +1,422 @@
+﻿<!doctype html>
+<html lang="sl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Legenda Babice Ocean — AQUA · BLINKITA</title>
+<meta name="description" content="Živa oceanska legenda o kitih, delfinih, morskih želvah, svetih školjkah in šepetu, ki potuje s karibske obale Belizeja.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="home.css">
+<style>
+.legend-page {
+  background: var(--cream, #f7f5ee);
+  color: var(--ink, #24434a);
+  overflow-x: hidden;
+  font-family: "DM Sans", sans-serif;
+}
+.legend-hero {
+  min-height: 620px;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  color: #24434a;
+  background:
+    linear-gradient(90deg,rgba(231,239,234,.94),rgba(231,239,234,.48) 58%,rgba(231,239,234,.08)),
+    url('images/flyers/babica-ocean-flyer-blank-transparent.jpg') center/cover no-repeat;
+}
+.legend-hero:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg,rgba(231,239,234,.35),transparent 65%);
+}
+.legend-nav {
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  right: 0;
+  min-height: 76px;
+  padding: 0 clamp(22px,6vw,90px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(248,247,241,.9);
+  border-bottom: 1px solid rgba(83,125,124,.12);
+  color: var(--ink);
+  font-size: 10px;
+  letter-spacing: .15em;
+}
+.legend-nav a { color: var(--ink); text-decoration: none; }
+.legend-hero-copy {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  padding: 150px clamp(24px,10vw,150px) 90px;
+}
+.legend-eyebrow,.legend-kicker {
+  font-size: 10px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--sea-dark,#3e7477);
+}
+.legend-hero h1 {
+  font: 400 clamp(58px,8vw,100px)/.92 "Cormorant Garamond",serif;
+  margin: 24px 0;
+  color: #294950;
+}
+.legend-hero h1 em { font-style: normal; color: var(--sea-dark,#3e7477); }
+.legend-sub {
+  max-width: 570px;
+  font: 400 clamp(21px,2.5vw,27px)/1.5 "Cormorant Garamond",serif;
+  color: #49676b;
+}
+.legend-wrap {
+  max-width: 920px;
+  margin: auto;
+  padding: 95px 28px 105px;
+}
+.legend-section { margin: 0 0 100px; }
+.legend-section h2 {
+  font: 400 clamp(40px,5.5vw,62px)/1.02 "Cormorant Garamond",serif;
+  margin: 12px 0 28px;
+  color: #294950;
+}
+.legend-section h2 em { font-style: normal; color: var(--sea-dark,#3e7477); }
+.legend-text {
+  max-width: 760px;
+  font: 300 14px/2 "DM Sans",sans-serif;
+  color: #526b6e;
+}
+.legend-text p { margin: 0 0 20px; }
+.legend-text strong { font-weight: 500; color: #294950; }
+.legend-image { margin: 45px 0 60px; }
+.legend-image img {
+  display: block;
+  width: 100%;
+  max-height: 560px;
+  object-fit: cover;
+}
+.legend-image figcaption {
+  margin-top: 12px;
+  font-size: 9px;
+  letter-spacing: .16em;
+  color: #788e8b;
+}
+.legend-image.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.legend-image.split img { height: 340px; }
+.legend-quote {
+  margin: 0;
+  padding: 85px 8vw;
+  text-align: center;
+  background: #e5eeea;
+  color: #315b60;
+}
+.legend-quote p {
+  max-width: 900px;
+  margin: auto;
+  font: 400 clamp(34px,5vw,58px)/1.12 "Cormorant Garamond",serif;
+}
+.legend-quote em { font-style: normal; color: var(--sea-dark); }
+.legend-keepers {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 40px;
+  margin-top: 35px;
+}
+.keeper { padding: 25px 0; border-top: 1px solid #d6dfd9; }
+.keeper h3 {
+  font: 400 30px/1.1 "Cormorant Garamond",serif;
+  margin: 0 0 10px;
+  color: #3e7477;
+}
+.keeper p {
+  font: 300 13px/1.9 "DM Sans",sans-serif;
+  margin: 0;
+  color: #526b6e;
+}
+.legend-dark {
+  margin: 0;
+  padding: 90px 7vw;
+  background: #e8f0ed;
+  color: var(--ink);
+}
+.legend-dark-inner { max-width: 920px; margin: auto; }
+.legend-dark .legend-text { color: #526b6e; }
+.shell-feature {
+  display: grid;
+  grid-template-columns: .95fr 1.05fr;
+  gap: 42px;
+  align-items: center;
+  margin: 55px 0;
+}
+.shell-feature img { width: 100%; height: 470px; object-fit: cover; }
+.shell-feature .legend-text { font-size: 14px; }
+.legend-callout {
+  border-left: 2px solid var(--gold,#b69a69);
+  padding: 8px 0 8px 24px;
+  margin: 35px 0;
+}
+.legend-callout p {
+  font: 400 29px/1.25 "Cormorant Garamond",serif;
+  margin: 0;
+  color: #3e7477;
+}
+.legend-end {
+  padding: 100px 7vw;
+  text-align: center;
+  background: linear-gradient(120deg,#e8f0ed,#dce9e3);
+  color: var(--ink);
+}
+.legend-end h2 {
+  font: 400 clamp(48px,7vw,78px)/.98 "Cormorant Garamond",serif;
+  max-width: 800px;
+  margin: 20px auto;
+}
+.legend-end p {
+  font: 400 23px/1.5 "Cormorant Garamond",serif;
+  max-width: 650px;
+  margin: 0 auto 32px;
+  color: #526b6e;
+}
+.legend-button {
+  display: inline-block;
+  padding: 16px 25px;
+  background: var(--sea-dark,#3e7477);
+  color: white;
+  text-decoration: none;
+  font-size: 10px;
+  letter-spacing: .15em;
+}
+.legend-footer {
+  text-align: center;
+  padding: 30px 18px;
+  background: var(--cream);
+  font-size: 9px;
+  letter-spacing: .15em;
+  color: #788e8b;
+}
+.legend-footer a { color: inherit; text-decoration: none; }
+@media(max-width:720px) {
+  .legend-hero { min-height: 590px; }
+  .legend-hero-copy { padding: 140px 7vw 75px; }
+  .legend-hero h1 { font-size: 60px; }
+  .legend-nav { min-height: 68px; padding: 0 6vw; }
+  .legend-nav .back-text { display: none; }
+  .legend-wrap { padding: 70px 7vw 80px; }
+  .legend-section { margin-bottom: 75px; }
+  .legend-keepers,.legend-image.split,.shell-feature { grid-template-columns: 1fr; }
+  .legend-image.split img { height: 280px; }
+  .shell-feature { gap: 25px; }
+  .shell-feature img { height: 350px; }
+  .legend-dark { padding: 70px 7vw; }
+  .legend-quote { padding: 65px 8vw; }
+  .legend-end { padding: 75px 7vw; }
+}
+
+/* MARINE LIFE PHOTOGRAPHY */
+.legend-keepers {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 38px 24px;
+}
+.keeper {
+  padding: 0;
+  border: 0;
+}
+.keeper-photo {
+  display: block;
+  width: 100%;
+  height: 225px;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+.keeper h3 {
+  font-size: 29px;
+  margin-bottom: 10px;
+}
+@media(max-width:720px) {
+  .legend-keepers {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    gap: 28px 16px;
+  }
+  .keeper-photo { height: 165px; }
+  .keeper h3 { font-size: 25px; }
+}
+@media(max-width:420px) {
+  .legend-keepers { grid-template-columns: 1fr; }
+  .keeper-photo { height: 230px; }
+}
+</style>
+</head>
+<body class="legend-page">
+<div class="noise"></div>
+<header class="legend-hero">
+  <nav class="legend-nav">
+  <a href="index.html?lang=sl#journey">AQUA <span style="color:#c9b27a">·</span> BLINKITA</a>
+  <span style="display:flex;gap:22px;align-items:center">
+    <a href="grandmother-ocean.html?lang=en">EN</a>
+    <a href="index.html?lang=sl#journey">← <span class="back-text">NAZAJ K OCEANSKEMU PORTALU</span></a>
+  </span>
+</nav>
+  <div class="legend-hero-copy">
+    <p class="legend-eyebrow">ŽIVA LEGENDA · GLAS IZ ZAČETKA</p>
+    <h1>LEGENDA<br><em>BABICE<br>OCEAN.</em></h1>
+    <p class="legend-sub">Zgodba o pradavnih vodah, varuhih njenega živega kraljestva in sveti školjki, ki človeški šepet ponese čez morje.</p>
+  </div>
+</header>
+<main class="legend-wrap">
+  <section class="legend-section">
+    <p class="legend-kicker">PRED ZAČETKOM</p>
+    <h2>Preden je obstajal začetek, <em>je obstajala voda.</em></h2>
+    <div class="legend-text">
+      <p>Preden so prvi koraki prečkali kopno, preden je bilo izgovorjeno prvo ime in preden je kdorkoli potegnil črto med enim in drugim obrežjem, je obstajala velika voda.</p>
+      <p>Neskončna, gibljiva, dihajoča. Včasih nežna kot uspavanka. Včasih mogočna onkraj vseh človeških meril. V sebi je nosila spomin dežja, rek, zvezd in vsega življenja, ki se bo nekega dne dvignilo iz njenih globin.</p>
+      <p>V tej živi zgodbi jo imenujemo <strong>Babica Ocean</strong> — ne zato, ker bi morje pripadalo enemu imenu ali eni tradiciji, temveč zato, ker ocean lahko občutimo kot prisotnost pradavne modrosti: dovolj prostrano, da sprejme naša vprašanja, dovolj potrpežljivo, da sprejme naš molk, in vedno v gibanju.</p>
+      <p>Ne govori tako, kot govorijo ljudje. Njen jezik so plima in tokovi, sol in veter, lesket svetlobe pod gladino ter dolgi ritem valov, ki se vračajo k obali.</p>
+    </div>
+    <figure class="legend-image"><img src="images/1-caribbeanshorline.jpg" alt="The Caribbean Sea reaching the shore in Belize"><figcaption>KARIBSKO MORJE · OBALA BELIZEJA</figcaption></figure>
+  </section>
+
+  <div class="legend-quote"><p>Ni tiho.<br><em>Le mi smo postali tujci jeziku vode.</em></p></div>
+
+  <section class="legend-section">
+    <p class="legend-kicker">VARUHI NJENEGA ŽIVEGA KRALJESTVA</p>
+    <h2>Mnoga življenja. <em>En sam veliki ocean.</em></h2>
+    <div class="legend-text">
+      <p>Babica Ocean nikoli ni prazna. Njeno kraljestvo je živa tapiserija, stkana iz bitij, ki jih lahko opazujemo že od daleč, in takšnih, ki so tako majhna, da izginejo v zrnu peska. Vsako življenje ima svoje mesto v velikem gibanju morja.</p>
+    </div>
+    <div class="legend-keepers">
+      <article class="keeper"><img class="keeper-photo" src="images/marine/whale.jpg" alt="Kiti" loading="lazy"><h3>Kiti · Varuhi pradavne pesmi</h3><p>Kiti prek neizmernih razdalj pošiljajo svoje globoke klice skozi vodo. V tej legendi so njihove pesmi najstarejši spomin oceana — opomin, da zvok lahko potuje tja, kamor pogled ne seže.</p></article>
+      <article class="keeper"><img class="keeper-photo" src="images/marine/dolphins.jpg" alt="Delfini" loading="lazy"><h3>Delfini · Glasniki radosti</h3><p>Igrivi, radovedni in izjemno uglašeni drug z drugim se delfini premikajo skozi valove kot bliski žive svetlobe. Spominjajo nas, da je povezanost lahko inteligentna, radostna in svobodna.</p></article>
+      <article class="keeper"><img class="keeper-photo" src="images/marine/turtle.jpg" alt="Morske želve" loading="lazy"><h3>Morske želve · Varuhinje poti domov</h3><p>Po odprtem morju morske želve potujejo z izjemnim občutkom za smer. Njihova dolga potovanja nosijo zgodbo vračanja: nagon, da najdejo kraj, kjer se je začelo življenje.</p></article>
+      <article class="keeper"><img class="keeper-photo" src="images/marine/manta.jpg" alt="Mante" loading="lazy"><h3>Mante · Krila globin</h3><p>S širokimi, lahkotnimi krili mante drsijo skozi modrino. So tihe plesalke globin, ki nas učijo umetnosti gibanja s tokom, namesto bojevanja proti njemu.</p></article>
+      <article class="keeper"><img class="keeper-photo" src="images/marine/coral.jpg" alt="Koralni vrtovi" loading="lazy"><h3>Koralni vrtovi · Živa mesta</h3><p>Koralni grebeni niso kamniti vrtovi, temveč žive skupnosti. Med njihovimi razvejanimi strukturami najde zavetje nešteto oblik življenja. Spominjajo nas, da lahko skozi povezanost zacveti cel svet.</p></article>
+      <article class="keeper"><img class="keeper-photo" src="images/marine/seahorse.jpg" alt="Mali varuhi" loading="lazy"><h3>Mali varuhi · Nevidna mreža življenja</h3><p>Morski konjički, drobne ribice, raki, morske zvezde, školjke, plankton in morske ptice so vsi del velike mreže življenja. Čudežnost oceana se ne meri po velikosti. Tudi najmanjše življenje soustvarja celoto.</p></article>
+    </div>
+    <figure class="legend-image"><img src="images/6-water-close-up.jpg" alt="Light and movement on the Caribbean water"><figcaption>ŽIVA POVRŠINA · SVETLOBA, TOK IN GIBANJE</figcaption></figure>
+  </section>
+
+  <section class="legend-section">
+    <p class="legend-kicker">OCEANSKE ŠKOLJKE · KRISTALI MORJA</p>
+    <h2>Majhni domovi, ki jih oblikuje <em>velika voda.</em></h2>
+    <div class="legend-text">
+      <p>Školjka je najprej del zgodbe živega bitja. Raste skupaj s svojim ustvarjalcem, plast za plastjo, oblikujejo jo hranila, čas in razmere v morju. Ko bitja ni več, lahko školjka ostane — nežna arhitektura, ki jo za seboj pusti življenje.</p>
+      <p>Nekatere se spiralno odpirajo navzven. Druge se razprejo kot pahljače. Ene so gladke kot porcelan, druge nosijo grebene, vzorce in barve, v katerih se zdi, da je ujet spomin koralnega grebena.</p>
+      <p>V jeziku te legende so školjke <strong>kristali morja</strong> — ne zato, ker bi bile vse mineralni kristali, temveč zato, ker ohranjajo vidno sled življenja, ki je nekoč prebivalo v vodi. Njihove spirale nas vabijo, da se spomnimo rasti, zaščite, doma in poti nenehnega nastajanja.</p>
+    </div>
+    <figure class="legend-image split"><img src="images/3-shell-messenger.jpg" alt="A shell beside the Caribbean shore"><img src="images/4-hand-shell-water.jpg" alt="A shell held above the water"></figure>
+  </section>
+</main>
+
+<section class="legend-dark">
+  <div class="legend-dark-inner">
+    <section class="legend-section">
+      <p class="legend-kicker">SVETA ŠKOLJKA · IZVORNI ZVOK STVARJENJA</p>
+      <h2>Pred besedami <em>je obstajal zvok.</em></h2>
+      <div class="legend-text">
+        <p>Preden je jezik dal mislim obliko, je obstajal dih. Obstajalo je nihanje. Obstajal je globoki utrip bivanja — zvok vetra, ki potuje skozi svet, vode, ki se sreča s kamnom, in glasu, ki kliče čez daljavo.</p>
+        <p>Ko školjka postane sveto glasbilo, njena naravna oblika postane prostor za dih. Vanjo vstopi človeški dih in iz nje se rodi globok, odmeven ton. To ni beseda in ni je treba prevajati. Je vibracija, podarjena odprtemu prostoru.</p>
+        <p>Tukaj, v poetičnem jeziku AQUA BLINKITA, ta zvok imenujemo <strong>Izvorni zvok stvarjenja</strong> — ime za občutek, da se lahko skozi en sam dih premakne nekaj pradavninskega in brezbesednega.</p>
+      </div>
+      <div class="shell-feature">
+        <img src="images/3-shell-messenger.jpg" alt="The shell messenger at the Caribbean shore">
+        <div class="legend-text">
+          <p class="legend-kicker">CASITA CORNUTA · GLASNICA ŠKOLJKA</p>
+          <p>Moja <strong>Casita Cornuta</strong> je 26 centimetrov velika oceanska školjka, preoblikovana v sveto glasbilo. Ko jo prislonim k ustnicam in ji podarim dih, njen ton odpotuje nad karibske vode.</p>
+          <p>Postala je srce moje oceanske prakse: srečanje diha, školjke, morja in namere. Zvok, ki ponese tisto, česar običajne besede včasih ne zmorejo zaobjeti.</p>
+          <div class="legend-callout"><p>Tvoje ime. Tvoja namera. En dih, ki odpotuje čez vodo.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="legend-section">
+      <p class="legend-kicker">ŠEPET BABICI OCEAN</p>
+      <h2>Tvoj šepet ponesem <em>na Karibe.</em></h2>
+      <div class="legend-text">
+        <p>Ko mi nekdo zaupa svoje ime in namero, ju ponesem na karibsko obalo Belizeja. Stopim ob vodo z mislijo na to osebo. Njeno namero skrbno nosim v sebi, prislonim školjko k ustnicam in njen glas pošljem proti odprtemu morju.</p>
+        <p>Školjka postane glasnica. Dih postane šepet. Ime in namera osebe vstopita v resničen, oseben trenutek, ki se zgodi ob oceanu.</p>
+        <p>Ni ti treba potovati v Belize ali karkoli opraviti samemu oziroma sami. Na izbrani dan Oceanskega portala se na obalo odpravim v tvojem imenu.</p>
+      </div>
+      <figure class="legend-image"><img src="images/5-caribbean-shoreline.jpg" alt="A quiet Caribbean shoreline in Belize"><figcaption>OBALA, KJER SE ZGODI SREČANJE S TVOJIM OCEANOM</figcaption></figure>
+    </section>
+  </div>
+</section>
+
+<main class="legend-wrap">
+  <section class="legend-section">
+    <p class="legend-kicker">KO BABICA OCEAN ODGOVORI S ŠEPETOM</p>
+    <h2>Umetnost <em>poslušanja.</em></h2>
+    <div class="legend-text">
+      <p>Ko školjka zazveni in šepet odpotuje v odprti prostor, se umirim. Ostajam ob morju. Poslušam gibanje valov, spreminjanje plime in oseke, veter, premore med zvoki — in tisto, kar se tiho premika v meni.</p>
+      <p>Ne pridem z vnaprej napisanim sporočilom. Ne odločam se vnaprej, kaj naj bi ocean povedal. Srečanju pustim prostor, da se razpre.</p>
+      <p>Včasih se vtis začne kot občutek. Včasih se izostri podoba, beseda, spomin ali tiho védenje. Včasih je prav gibanje vode tisti trenutek, ki ostane z menoj. Te vtise sprejemam intuitivno in skrbno ter jih oblikujem v osebno sporočilo za človeka, čigar ime in namero sem prinesla s seboj.</p>
+      <p>Vsako srečanje je drugačno, ker je drugačen vsak človek, vsaka namera in vsak dan portala. Sporočila ne prepisujem iz scenarija in ga ne izbiram iz zbirke vnaprej pripravljenih besed. Nastane po tistem posebnem trenutku ob morju.</p>
+    </div>
+    <figure class="legend-image"><img src="images/8-ocean-message.jpg" alt="A personal ocean message from the Caribbean shore"><figcaption>SPOROČILO SE OBLIKUJE PO TRENUTKU OB MORJU</figcaption></figure>
+    <div class="legend-callout"><p>Najprej ponesem tvoj šepet oceanu. Nato prisluhnem temu, kar se razkrije. In nazadnje ti prinesem osebno sporočilo.</p></div>
+  </section>
+
+  <div class="legend-quote"><p>Vsak šepet si zasluži trenutek,<br><em>da je ponesen, sprejet in ohranjen v spominu.</em></p></div>
+
+  <section class="legend-section">
+    <p class="legend-kicker">KO SO LJUDJE POZABILI POSLUŠATI</p>
+    <h2>Naučili smo se govoriti glasneje. <em>Ne pa vedno poslušati globlje.</em></h2>
+    <div class="legend-text">
+      <p>Svoje dneve smo napolnili s hrupom, naglico in neskončnimi besedami. Odgovore iščemo tam, kjer se vse hitro premika, medtem ko nas ocean še vedno uči skozi ritem: plima prihaja, oseka odhaja. Ničesar ne moremo zadržati za vedno. Nič ne miruje za vedno.</p>
+      <p>Morda zato obala deluje kot prag. Pridemo s tistim, kar je postalo pretežko, preveč zapleteno ali preveč pomembno, da bi ostalo neizrečeno. In za trenutek stojimo pred nečim, kar je večje od naših lastnih misli.</p>
+      <p>Vabilo Babice Ocean je preprosto: ustavi se. Začuti. Spomni se, da je poslušanje tudi način, kako vstopamo v odnos s svetom.</p>
+    </div>
+  </section>
+
+  <section class="legend-section">
+    <p class="legend-kicker">ZAKAJ KARIBSKO MORJE?</p>
+    <h2>Ker tukaj živi <em>moja oceanska zgodba.</em></h2>
+    <div class="legend-text">
+      <p>Moj odnos do te prakse je ukoreninjen v kraju, kjer živim: na karibski obali Belizeja. To so vode, h katerim se vračam, obzorje, ki ga poznam, in obala, kjer zazvenim s svojo školjko ter ustvarim vsako osebno srečanje.</p>
+      <p>Karibskega morja ne predstavljam kot edinega svetega morja ali kot kraja, ki bi bil vrednejši od drugih oceanov. Je preprosto resnično, živo okolje mojega dela. Njegova svetloba, veter, plimovanje in obala so del izkušnje, ki jo lahko osebno ponudim.</p>
+      <p>S te obale se začne pot šepeta — tudi kadar je človek, ki ga je poslal, na drugi strani sveta.</p>
+    </div>
+  </section>
+
+  <section class="legend-section">
+    <p class="legend-kicker">IN ZDAJ GOVORIM TEBI</p>
+    <h2>Sporočilo <em>Babice Ocean.</em></h2>
+    <div class="legend-text">
+      <p>Pridi bliže, ljubo bitje.</p>
+      <p>Ni ti treba poznati popolnih besed. Ni ti treba priti brez strahu, brez vprašanj ali z vsem že razjasnjenim.</p>
+      <p>Prinesi tisto, kar je zate resnično. Prinesi ime, ki ga nosiš v srcu. Prinesi željo, ki si je komaj upal izreči, spremembo, ki si jo pripravljen sprejeti, in breme, ki si ga pripravljen odložiti.</p>
+      <p>Ne bom te prosila, da postaneš nekdo drug. Spomnila te bom, da prisluhniš življenju, ki se že premika v tebi.</p>
+      <p>Opazuj, kako se vračam k obali. Opazuj, kako spuščam tisto, česar ne morem zadržati. Opazuj, kako ustvarjam prostor za to, kar prihaja.</p>
+      <p>In ko boš pripravljen, naj tvoj šepet odpotuje.</p>
+    </div>
+  </section>
+
+  <section class="legend-section">
+    <p class="legend-kicker">OCEANSKI PORTALI · TRINAJST SREČANJ</p>
+    <h2>Trinajst vrat. <em>En živi ocean.</em></h2>
+    <div class="legend-text">
+      <p>Oceanski portali so izbrani dnevi, vsak povezan z določeno energijo Tzolk'ina. Ne gre zgolj za trinajst zaporednih datumov. Vsak portal ima svoje mesto v koledarju, svoj značaj in svoje povabilo.</p>
+      <p>Izbereš lahko eno srečanje ter na izbrani dan portala prineseš eno ime in eno namero. Lahko pa vstopiš v daljše potovanje skozi vseh trinajst izbranih portalov in vsakemu srečanju dovoliš, da se razpre na svoj dan.</p>
+      <p>Na vsak izbrani dan se odpravim na obalo, zazvenim z Glasnico školjko, prisluhnem in ustvarim osebno sporočilo. Trinajst srečanj postane trinajst posebnih trenutkov, združenih v eno osebno oceansko potovanje.</p>
+    </div>
+  </section>
+</main>
+
+<section class="legend-end">
+  <p class="legend-eyebrow">ŠEPET S KARIBOV</p>
+  <h2>Ocean te kliče.<br>Mu boš prisluhnil?</h2>
+  <p>Tvoje ime. Tvoja namera. Ponesena Babici Ocean s karibske obale Belizeja — in osebno sporočilo, prineseno nazaj k tebi.</p>
+  <a class="legend-button" href="index.html?lang=sl#portals">RAZIŠČI OCEANSKE PORTALE</a>
+</section>
+<footer class="legend-footer">AQUA · BLINKITA · <a href="index.html?lang=sl#journey">VRNI SE NA KARIBSKI OCEANSKI PORTAL</a></footer>
+</body>
+</html>
+
+
