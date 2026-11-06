@@ -324,7 +324,7 @@
     "grandmother-ocean.html": "grandmother-ocean-sl.html",
     "water.html": "water-sl.html",
     "aqua-lemu.html": "aqua-lemu-sl.html",
-    "prepare.html": "prepare.html"
+    "preparation.html": "preparation-sl.html"
   };
 
   const page = url.pathname.split("/").pop();
@@ -788,8 +788,8 @@ My intention / question: ${data.message}`;
 
   const entryScreen = $("#entryScreen");
 
-  if (entryScreen && hasSavedLanguage) {
-    entryScreen.classList.add("is-hidden");
+  if (entryScreen) {
+    entryScreen.classList.remove("is-hidden");
   }
 
   applyLanguage();
