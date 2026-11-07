@@ -787,8 +787,12 @@ My intention / question: ${data.message}`;
   });
 
   const entryScreen = $("#entryScreen");
+  const returningToPortal = ["sl", "en"].includes(params.get("lang"));
 
-  if (entryScreen) {
+  if (entryScreen && returningToPortal) {
+    entryScreen.classList.add("is-hidden");
+    document.body.classList.remove("entry-active");
+  } else if (entryScreen) {
     entryScreen.classList.remove("is-hidden");
   }
 
