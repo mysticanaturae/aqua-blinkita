@@ -1659,3 +1659,12 @@ html[lang="en"] .offer::before {
 
 
 .portal-picker[hidden] { display: none !important; }
+
+
+/* Fix: keep BREZPLAČNO inside the free offer card */
+.offer.free h3 {
+  font-size: clamp(25px, 2.6vw, 34px);
+  letter-spacing: -0.045em;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
